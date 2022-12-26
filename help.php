@@ -49,7 +49,7 @@
                 </form>
             </div>
             <br><br>
-            <div class="recommend">
+            <div class="recommend" id="popup">
                 <?php include './php/help.php'; ?>
             </div>
             <br><br><br>
@@ -72,12 +72,12 @@
 
             function openPopup()
             {
-                popup.classList.add("open-popup");
+                popup.style.removeProperty('visibility');
             }
 
             function closePopup()
             {
-                popup.classList.remove("open-popup");
+                popup.style.visibility = "hidden";
             }
 
         </script>

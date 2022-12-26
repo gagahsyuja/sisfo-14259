@@ -484,6 +484,17 @@ table h3 {
     text-align: center;
     color: #d79921;
     font-weight: bolder;
+    /* visibility: hidden; */
+    background-color: #282828;
+    position: absolute;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 28%;
+    margin-top: -20%;
+    border-radius: 15px;
+    
 }
 
 .recommend a {
@@ -544,15 +555,20 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    /* color: #fabd2f; */
     box-shadow: 0px 0px 10px#fabd2f;
     transition: 0.3s;
 }
 
-.popup {
-    visibility: hidden;
+.close {
+    height: 35px;
+    width: 5%;
+    color: #282828;
+    border-radius: 7px;
+    background-color: #d79921;
+    border: 2px solid #d79921;
 }
 
-.open-popup {
-    visibility: visible;
+.close:hover {
+    box-shadow: 0px 0px 10px#fabd2f;
+    transition: 0.3s;
 }
