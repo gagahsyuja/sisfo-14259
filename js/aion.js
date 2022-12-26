@@ -11,5 +11,5 @@ var liveprice = {
 $.ajax(liveprice).done(function (response) {
     console.log(response);
 
-    coin.innerHTML = response.aion.idr;
+    coin.innerHTML = response.aion.[idr];
 })

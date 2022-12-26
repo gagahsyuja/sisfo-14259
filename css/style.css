@@ -480,21 +480,38 @@ table h3 {
     color: #d79921;
 }
 
+.recommend-outside {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
 .recommend {
     text-align: center;
     color: #d79921;
     font-weight: bolder;
-    /* visibility: hidden; */
-    background-color: #282828;
+    background-color: #3c3836;
     position: absolute;
+	display: none;
     padding-left: 5%;
     padding-right: 5%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    margin-left: 28%;
-    margin-top: -20%;
+    padding-top: 4%;
+    padding-bottom: 3%;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
     border-radius: 15px;
-    
+	box-shadow: 10px 10px #fabd2f;
+}
+
+.recommend-open {
+	display: block;
 }
 
 .recommend a {
@@ -529,6 +546,7 @@ input[type=text] {
     background-color: #665c54;
     text-align: center;
     transition: 0.2s;
+	outline: none;
 }
 
 input[type=text]:focus {
@@ -551,24 +569,27 @@ input[type=submit] {
     color: #282828;
     border-radius: 7px;
     background-color: #d79921;
-    border: 2px solid #d79921;
+	border: none;
 }
 
 input[type=submit]:hover {
-    box-shadow: 0px 0px 10px#fabd2f;
-    transition: 0.3s;
+	background-color: #fabd2f;
+	color: #282828;
+    transition: 0.2s;
 }
 
 .close {
     height: 35px;
-    width: 5%;
+    width: 20%;
     color: #282828;
     border-radius: 7px;
     background-color: #d79921;
-    border: 2px solid #d79921;
+    border: none;
+	margin-top: 10%;
 }
 
 .close:hover {
-    box-shadow: 0px 0px 10px#fabd2f;
+    background-color: #fabd2f;
+	color: #282828;
     transition: 0.3s;
 }

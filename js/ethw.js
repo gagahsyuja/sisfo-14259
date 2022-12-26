@@ -1,9 +1,9 @@
-var coin = document.getElementById("btg");
+var coin = document.getElementById("ethw");
 
 var liveprice = {
     "async": true,
     "scroosDomain": true,
-    "url": "https://indodax.com/api/ticker/btgidr",
+    "url": "https://indodax.com/api/ticker/ethwidr",
     "method": "GET",
     "headers": {}
 }

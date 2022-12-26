@@ -26,7 +26,7 @@
         <!-- <img src="./img/banner.png" alt="banner" width=100%> -->
         <div class="vram-box">
             <div class="vram">
-                <br><br>
+                <br><br><br>
                 <h2>What should we call you?</h2>
                 <form action="" method="post">
                     <br>
@@ -45,14 +45,16 @@
                     </div>
                     <!-- <input type="text" name="text"> -->
                     <br><br>
-                    <input type="submit" value="Submit" onclick="openPopup()">
+                    <input type="submit" value="Submit">
                 </form>
             </div>
             <br><br>
-            <div class="recommend" id="popup">
-                <?php include './php/help.php'; ?>
-            </div>
-            <br><br><br>
+			<div class="recommend-outside" id="popup-1">
+				<div class="recommend" id="popup">
+					<?php include './php/help.php'; ?>
+				</div>
+			</div>
+            <br><br>
         </div>
         
         <br><br><br><br>
@@ -68,16 +70,14 @@
             </div>
         </div>
         <script>
+		
             let popup = document.getElementById("popup");
-
-            function openPopup()
-            {
-                popup.style.removeProperty('visibility');
-            }
+			let popup1 = document.getElementById("popup-1");
 
             function closePopup()
             {
-                popup.style.visibility = "hidden";
+                popup.style.display = 'none';
+				popup1.style.display = 'none';
             }
 
         </script>
