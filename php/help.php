@@ -6,9 +6,11 @@ if (isset($_POST['two']))
 {
     $vram = $_POST['two'];
 
+    echo '<div class="popup">';
     echo '<h2>Hi ' . $name . ',</h2>';
     echo '<h2>With ' . $vram . ' VRAM of yours,</h2>';
     echo '<h2>I recommend you <a href="./index.html#equihash">Equihash</a></h2>';
+    echo '</div>';
 }
 
 if (isset($_POST['four']))

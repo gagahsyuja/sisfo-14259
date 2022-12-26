@@ -45,10 +45,10 @@
                     </div>
                     <!-- <input type="text" name="text"> -->
                     <br><br>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" onclick="openPopup()">
                 </form>
             </div>
-            <br>
+            <br><br>
             <div class="recommend">
                 <?php include './php/help.php'; ?>
             </div>
@@ -67,5 +67,19 @@
                 <a href="https://www.facebook.com/gagah.s.abdullah" target="_blank"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </div>
+        <script>
+            let popup = document.getElementById("popup");
+
+            function openPopup()
+            {
+                popup.classList.add("open-popup");
+            }
+
+            function closePopup()
+            {
+                popup.classList.remove("open-popup");
+            }
+
+        </script>
     </body>
 </html>
