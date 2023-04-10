@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
-
 * {
     padding: 0;
     margin: 0;
@@ -550,6 +549,24 @@ input[type=text] {
 }
 
 input[type=text]:focus {
+    color: #fabd2f;
+    background-color: #282828;
+}
+
+input[type=password] {
+    height: 30px;
+    width: 15%;
+    color: #fabd2f;
+    border-radius: 7px;
+    box-sizing: border-box;
+    border: 2px solid #d79921;
+    background-color: #665c54;
+    text-align: center;
+    transition: 0.2s;
+	outline: none;
+}
+
+input[type=password]:focus {
     color: #fabd2f;
     background-color: #282828;
 }
