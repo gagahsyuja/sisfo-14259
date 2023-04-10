@@ -15,9 +15,23 @@
                 <h1><a href="./index.html#top">Cryptopow</a></h1>
             </div>
             <div class="topbar-menu">
-                <a href="./index.html#top">Home</a>
+                <a href="./index.php#top">Home</a>
                 <a href="./help.php">Help</a>
                 <a href="./about.html">About</a>
+                <?php
+                
+                session_start();
+
+                if (!isset($_SESSION['uname']))
+                {
+                    echo '<a href="./login.html"><i class="fa-solid fa-user-large"></i></a>';
+                }
+                else
+                {
+                    echo '<a href="./logged.php"><i class="fa-solid fa-user-large"></i> ' . $_SESSION["uname"] . '</a>';
+                }
+
+                ?>
             </div>
         </div>
         <img src="./img/banner.png" alt="banner" width="100%">
