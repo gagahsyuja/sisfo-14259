@@ -17,15 +17,24 @@ function getAllWatchlist($fav)
     switch ($fav)
     {
         case 1:
-            echo '<p>Aion</p>';
+            echo '<p>Aion</p>
+                <form action="./watch/aionX.php" method="post">
+                    <input type="submit" value="Remove" name="input">
+                </form>';
             break;
             
         case 2:
-            echo '<p>Bitcoin Gold</p';
+            echo '<p>Bitcoin Gold</p>
+                <form action="./watch/btgX.php" method="post">
+                    <input type="submit" value="Remove" name="input">
+                </form>';
             break;
         
         case 3:
-            echo '<p>FLUX</p>';
+            echo '<p>Flux</p>
+                <form action="./watch/fluxX.php" method="post">
+                    <input type="submit" value="Remove" name="input">
+                </form>';
             break;
     }
 }
