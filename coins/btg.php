@@ -27,7 +27,28 @@
             <h3 class="title">Bitcoin Gold<br>(BTG)</h3>
             <h3 class="title">
                 <form action="../watch/btg.php" method="post">
-                    <input type="submit" value="Wishlist" name="submit">
+                    <?php
+
+                    session_start();
+
+                    include '../conn.php';
+
+                    $dbname = $_SESSION['uname'];
+
+                    $sql = "SELECT * FROM $dbname WHERE watchlist_id = '2'";
+                    $exist = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($exist) > 0)
+                    {
+                        echo '<br><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button>';
+                    }
+
+                    else
+                    {
+                        echo '<br><button type="submit" name="submit"><i class="fa-sharp fa-regular fa-eye fa-2x"></i></button>';
+                    }
+                    
+                    ?>
                 </form>
             </h3>
             <img class="image" src="https://cryptologos.cc/logos/bitcoin-gold-btg-logo.png?v=023" alt="image of Bitcoin Gold" width="18%">

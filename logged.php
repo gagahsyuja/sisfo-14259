@@ -29,6 +29,12 @@
                 <input type="submit" value="Logout" name="submit">
             </form>
 
+            <!-- <div class="aboutme">
+                <div class="user">
+                    <i class="fa-solid fa-user"></i><p>Aion</p>
+                </div>
+            </div> -->
+
             <?php include './watchlist.php' ?>
 
         </div>
