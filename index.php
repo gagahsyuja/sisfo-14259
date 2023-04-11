@@ -12,12 +12,13 @@
     <body>
         <div class="topbar">
             <div class="topbar-title">
-                <h1><a href="./index.html#top">Cryptopow</a></h1>
+                <h1><a href="./index.php#top">Cryptopow</a></h1>
             </div>
             <div class="topbar-menu">
                 <a href="./index.php#top">Home</a>
                 <a href="./help.php">Help</a>
                 <a href="./about.html">About</a>
+
                 <?php
                 
                 session_start();
@@ -26,9 +27,11 @@
                 {
                     echo '<a href="./login.html"><i class="fa-solid fa-user-large"></i></a>';
                 }
+                
                 else
                 {
                     echo '<a href="./logged.php"><i class="fa-solid fa-user-large"></i> ' . $_SESSION["uname"] . '</a>';
+                    
                 }
 
                 ?>
@@ -58,11 +61,11 @@
             </tr>
             <tr class="table-logo">
                 <!-- AION -->
-                <td><a href="./coins/aion.html"><img src="https://cryptologos.cc/logos/aion-aion-logo.png?v=023" alt="image of Aion" width="18%"></a></td>
+                <td><a href="./coins/aion.php"><img src="https://cryptologos.cc/logos/aion-aion-logo.png?v=023" alt="image of Aion" width="18%"></a></td>
                 <!-- BTG -->
-                <td><a href="./coins/btg.html"><img src="https://cryptologos.cc/logos/bitcoin-gold-btg-logo.png?v=023" alt="image of Bitcoin Gold" width="18%"></a></td>
+                <td><a href="./coins/btg.php"><img src="https://cryptologos.cc/logos/bitcoin-gold-btg-logo.png?v=023" alt="image of Bitcoin Gold" width="18%"></a></td>
                 <!-- FLUX -->
-                <td><a href="./coins/flux.html"><img src="https://cryptologos.cc/logos/zel-flux-logo.png?v=023" alt="image of Flux" width="18%"></a></td>
+                <td><a href="./coins/flux.php"><img src="https://cryptologos.cc/logos/zel-flux-logo.png?v=023" alt="image of Flux" width="18%"></a></td>
             </tr>
         </table>
         <div id="ethash" style="height: 120px;"></div>
@@ -77,11 +80,11 @@
             </tr>
             <tr class="table-logo">
                 <!-- ETC -->
-                <td><a href="./coins/etc.html"><img src="https://cryptologos.cc/logos/ethereum-classic-etc-logo.png?v=023" alt="image of Ethereum Classic" width="18%"></a></td>
+                <td><a href="./coins/etc.php"><img src="https://cryptologos.cc/logos/ethereum-classic-etc-logo.png?v=023" alt="image of Ethereum Classic" width="18%"></a></td>
                 <!-- ETHPOW -->
-                <td><a href="./coins/ethw.html"><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/21296.png" alt="image of EthereumPoW" width="18%"></a></td>
+                <td><a href="./coins/ethw.php"><img src="https://s2.coinmarketcap.com/static/img/coins/200x200/21296.png" alt="image of EthereumPoW" width="18%"></a></td>
                 <!-- ZIL -->
-                <td><a href="./coins/zil.html"><img src="https://cryptologos.cc/logos/zilliqa-zil-logo.png?v=023" alt="image of Zilliqa" width="18%"></a></td>
+                <td><a href="./coins/zil.php"><img src="https://cryptologos.cc/logos/zilliqa-zil-logo.png?v=023" alt="image of Zilliqa" width="18%"></a></td>
             </tr>
         </table>
         <div id="kawpow" style="height: 120px;"></div>
@@ -96,11 +99,11 @@
             </tr>
             <tr class="table-logo">
                 <!-- NEOX -->
-                <td><a href="./coins/neox.html"><img src="https://neoxa.net/wp-content/uploads/2022/10/Neoxa_Logo_1080p-1.png" alt="image of Neoxa" width="18%"></a></td>
+                <td><a href="./coins/neox.php"><img src="https://neoxa.net/wp-content/uploads/2022/10/Neoxa_Logo_1080p-1.png" alt="image of Neoxa" width="18%"></a></td>
                 <!-- RVN -->
-                <td><a href="./coins/rvn.html"><img src="https://cryptologos.cc/logos/ravencoin-rvn-logo.png?v=023" alt="image of Ravencoin" width="18%"></a></td>
+                <td><a href="./coins/rvn.php"><img src="https://cryptologos.cc/logos/ravencoin-rvn-logo.png?v=023" alt="image of Ravencoin" width="18%"></a></td>
                 <!-- ARL -->
-                <td><a href="./coins/arl.html"><img src="./img/arl.png" alt="image of Arielcoin" width="18%"></a></td>
+                <td><a href="./coins/arl.php"><img src="./img/arl.png" alt="image of Arielcoin" width="18%"></a></td>
         </table>
     </div>
     <br><br><br><br>
@@ -110,7 +113,7 @@
             <img src="./img/logo.png" alt="logo" width="15%">
         </div>
         <div class="botbar-social">
-            <a href="https://github.com/Discipl4" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/gagahsyuja" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://instagram.com/gagahsyuja__" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/gagah.s.abdullah" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         </div>

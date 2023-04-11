@@ -14,7 +14,7 @@
     <body>
         <div class="topbar">
             <div class="topbar-title">
-                <h1 class="topbar-title"><a href="./index.html">Cryptopow</a></h1>
+                <h1 class="topbar-title"><a href="./index.php">Cryptopow</a></h1>
             </div>
             <div class="topbar-menu">
                 <a href="./index.php">Home</a>

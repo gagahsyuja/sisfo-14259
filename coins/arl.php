@@ -4,19 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cryptopow - Ravencoin</title>
+        <title>Cryptopow - Arielcoin</title>
         <link rel="stylesheet" href="../css/style.css">
         <link rel="icon" href="../img/logo.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body>
         <div class="topbar">
             <div class="topbar-title">
-                <h1><a href="../index.html#top">Cryptopow</a></h1>
+                <h1><a href="../index.php#top">Cryptopow</a></h1>
             </div>
             <div class="topbar-menu">
-                <a href="../index.html#top">Home</a>
+                <a href="../index.php#top">Home</a>
                 <a href="../help.php">Help</a>
                 <a href="../about.html">About</a>
             </div>
@@ -24,8 +23,8 @@
         <br><br>
         <div class="box">
             <br><br>
-            <h3 class="title">Ravencoin<br>(RVN)</h3>
-            <img class="image" src="https://cryptologos.cc/logos/ravencoin-rvn-logo.png?v=023" alt="image of Aion" width="18%">
+            <h3 class="title">Arielcoin<br>(ARL)</h3>
+            <img class="image" src="../img/arl.png" alt="image of Aion" width="18%">
             <br><br>
             <table class="details">
                 <tr>
@@ -37,9 +36,9 @@
                 <tr>
                     <td class="details-link-title"><h3>Pools</h3></td>
                     <td class="details-link">
-                        <a href="https://rvn.2miners.com/" target="_blank">2Miners</a>
-                        <a href="https://ravencoin.flypool.org/" target="_blank">Flypool</a>
-                        <a href="https://hiveon.net/ravencoin" target="_blank">Hiveon</a>
+                        <a href="https://pool.arielcoin.org/" target="_blank">Ariel-Nomp</a>
+                        <a href="http://arielpool.shop/" target="_blank">ArielPool</a>
+                        <a href="https://newpool.pw/arl/" target="_blank">Newpool</a>
                     </td>
                 </tr>
                 <tr>
@@ -53,7 +52,7 @@
                 <tr>
                     <td class="details-link-title"><h3>Price</h3></td>
                     <td class="details-link">
-                        Rp<span id="rvn" style="color: #3c3836"></span>
+                        Rp<span id="" style="color: #3c3836">-</span>
                     </td>
                 </tr>
             </table>
@@ -70,6 +69,5 @@
                 <a href="https://www.facebook.com/gagah.s.abdullah" target="_blank"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </div>
-        <script src="../js/rvn.js"></script>
     </body>
 </html>

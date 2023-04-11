@@ -4,18 +4,19 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cryptopow - Arielcoin</title>
+        <title>Cryptopow - Neoxa</title>
         <link rel="stylesheet" href="../css/style.css">
         <link rel="icon" href="../img/logo.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body>
         <div class="topbar">
             <div class="topbar-title">
-                <h1><a href="../index.html#top">Cryptopow</a></h1>
+                <h1><a href="../index.php#top">Cryptopow</a></h1>
             </div>
             <div class="topbar-menu">
-                <a href="../index.html#top">Home</a>
+                <a href="../index.php#top">Home</a>
                 <a href="../help.php">Help</a>
                 <a href="../about.html">About</a>
             </div>
@@ -23,8 +24,8 @@
         <br><br>
         <div class="box">
             <br><br>
-            <h3 class="title">Arielcoin<br>(ARL)</h3>
-            <img class="image" src="../img/arl.png" alt="image of Aion" width="18%">
+            <h3 class="title">Neoxa<br>(NEOX)</h3>
+            <img class="image" src="https://neoxa.net/wp-content/uploads/2022/10/Neoxa_Logo_1080p-1.png" alt="image of Aion" width="18%">
             <br><br>
             <table class="details">
                 <tr>
@@ -36,9 +37,9 @@
                 <tr>
                     <td class="details-link-title"><h3>Pools</h3></td>
                     <td class="details-link">
-                        <a href="https://pool.arielcoin.org/" target="_blank">Ariel-Nomp</a>
-                        <a href="http://arielpool.shop/" target="_blank">ArielPool</a>
-                        <a href="https://newpool.pw/arl/" target="_blank">Newpool</a>
+                        <a href="https://neox.2miners.com/" target="_blank">2Miners</a>
+                        <a href="https://neox.minerpool.org/" target="_blank">MinerPool</a>
+                        <a href="https://zergpool.com/" target="_blank">Zergpool</a>
                     </td>
                 </tr>
                 <tr>
@@ -52,7 +53,7 @@
                 <tr>
                     <td class="details-link-title"><h3>Price</h3></td>
                     <td class="details-link">
-                        Rp<span id="" style="color: #3c3836">-</span>
+                        Rp<span id="neox" style="color: #3c3836"></span>
                     </td>
                 </tr>
             </table>
@@ -69,5 +70,6 @@
                 <a href="https://www.facebook.com/gagah.s.abdullah" target="_blank"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </div>
+        <script src="../js/neox.js"></script>
     </body>
 </html>

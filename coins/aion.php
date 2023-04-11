@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cryptopow - Zilliqa</title>
+        <title>Cryptopow - Aion</title>
         <link rel="stylesheet" href="../css/style.css">
         <link rel="icon" href="../img/logo.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
@@ -13,33 +13,39 @@
     <body>
         <div class="topbar">
             <div class="topbar-title">
-                <h1><a href="../index.html#top">Cryptopow</a></h1>
+                <h1><a href="../index.php#top">Cryptopow</a></h1>
             </div>
             <div class="topbar-menu">
-                <a href="../index.html#top">Home</a>
-                <a href="../help.php">Help</a>
+                <a href="../index.php#top">Home</a>
+				<a href="../help.php">Help</a>
                 <a href="../about.html">About</a>
             </div>
         </div>
         <br><br>
         <div class="box">
             <br><br>
-            <h3 class="title">Zilliqa<br>(ZIL)</h3>
-            <img class="image" src="https://cryptologos.cc/logos/zilliqa-zil-logo.png?v=023" alt="image of Aion" width="18%">
-            <br><br>
+            <h3 class="title">Aion<br>(AION)</h3>
+            <br>
+            <h3 class="title">
+                <form action="../watch/aion.php" method="post">
+                    <input type="submit" value="Wishlist" name="submit">
+                </form>
+            </h3>
+            <img class="image" src="https://cryptologos.cc/logos/aion-aion-logo.png?v=023" alt="image of Aion" width="18%">
+            <br>
             <table class="details">
                 <tr>
                     <td class="details-link-title"><h3>Algorithm</h3></td>
                     <td class="details-link">
-                        <a href="https://minerstat.com/algorithm/ethash" target="_blank">Ethash</a>
+                        <a href="https://cryptorival.com/algorithms/equihash2109/" target="_blank">Equihash(210,9)</a>
                     </td>
                 </tr>
                 <tr>
                     <td class="details-link-title"><h3>Pools</h3></td>
                     <td class="details-link">
-                        <a href="https://ezil.me/" target="_blank">Ezil</a>
-                        <a href="https://gteh.org/" target="_blank">GTeh Pool</a>
-                        <a href="https://shardpool.io/" target="_blank">ShardPool</a>
+                        <a href="https://aionpool.tech" target="_blank">Aion Pool</a>
+                        <a href="https://woolypooly.com/en/coin/aion" target="_blank">WoolyPooly</a>
+                        <a href="https://aionmine.org" target="_blank">AIONMINE</a>
                     </td>
                 </tr>
                 <tr>
@@ -47,14 +53,14 @@
                     <td class="details-link">
                         <a href="https://github.com/develsoftware/GMinerRelease" target="_blank">GMiner</a>
                         <a href="https://github.com/Lolliedieb/lolMiner-releases" target="_blank">LolMiner</a>
-                        <a href="https://github.com/trexminer/T-Rex" target="_blank">T-Rex</a>
+                        <a href="https://github.com/miniZ-miner/miniZ" target="_blank">miniZ</a>
                     </td>
-                    <tr>
-                        <td class="details-link-title"><h3>Price</h3></td>
-                        <td class="details-link">
-                            Rp<span id="zil" style="color: #3c3836"></span>
-                        </td>
-                    </tr>
+                </tr>
+                <tr>
+                    <td class="details-link-title"><h3>Price</h3></td>
+                    <td class="details-link">
+                        Rp<span id="aion" style="color: #3c3836"></span>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -70,6 +76,6 @@
                 <a href="https://www.facebook.com/gagah.s.abdullah" target="_blank"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </div>
-        <script src="../js/zil.js"></script>
+        <script src="../js/aion.js"></script>
     </body>
 </html>
