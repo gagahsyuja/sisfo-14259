@@ -53,10 +53,10 @@ body {
 
 .topbar-menu {
     /* list-style: none; */
-    float: right;
+    float: none;
     text-align: center;
     padding-top: 30px;
-    padding-right: 6%;
+    padding-right: 8.5%;
 }
 
 .topbar-menu a {
@@ -116,6 +116,10 @@ body {
     padding-top: 3%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.about input {
+    text-align: center;
 }
 
 .navbar {
@@ -624,4 +628,22 @@ button[type=submit]:hover {
     background-color: #fabd2f;
 	color: #282828;
     transition: 0.3s;
+}
+
+.wish-box {
+    background-color: #d79921;
+    height: 50px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    box-shadow: 0px 0px 18px #282828;
+}
+
+.wish-box button {
+    /* text-align: center; */
+    margin-left: 40%;
+    padding-left: 7%;
+    padding-right: 13%;
+
+    /* margin-left: 47%; */
+    /* padding-left: 50%; */
 }

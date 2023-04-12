@@ -4,26 +4,19 @@ session_start();
 
 include_once '../conn.php';
 
-if (isset($_POST['submit']))
+$dbname = $_SESSION['uname'];
+
+$sql = "SELECT * FROM $dbname WHERE watchlist_id = '3'";
+$exist = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($exist) > 0)
 {
-    $dbname = $_SESSION["uname"];
+    echo '<br><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button>';
+}
 
-    $sql = "INSERT INTO `$dbname` (`watchlist_id`) VALUES ('3')";
-    $query = "SELECT * FROM $dbname WHERE watchlist_id = '3'";
-    $duplicate = mysqli_query($conn, $query);
-
-    if (mysqli_num_rows($duplicate) > 0)
-    {
-        echo '<script>alert("It\'s Already There")</script>';
-    }
-
-    else
-    {
-        if (mysqli_query($conn, $sql))
-        {
-            echo '<script>alert("Added to wishlist")</script>';
-        }
-    }
+else
+{
+    echo '<br><button type="submit" name="submit"><i class="fa-sharp fa-regular fa-eye fa-2x"></i></button>';
 }
 
 ?>

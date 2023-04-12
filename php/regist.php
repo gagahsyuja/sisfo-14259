@@ -13,7 +13,9 @@ if (isset($_POST['submit']))
     $passwd = $_POST['passwd'];
     $confirm = $_POST['confirm'];
 
-    $sql = "INSERT INTO `accounts` (`uname`, `passwd`) VALUES ('$uname', '$passwd')";
+    $passwd_hashed = password_hash($passwd, PASSWORD_ARGON2I);
+
+    $sql = "INSERT INTO `accounts` (`uname`, `passwd`) VALUES ('$uname', '$passwd_hashed')";
     $watch = "CREATE TABLE `cryptopow`.`$uname` (`watchlist_id` INT NOT NULL ) ENGINE = InnoDB;";
     $query = "SELECT * FROM accounts WHERE uname = '$uname'";
     $duplicate = mysqli_query($conn, $query);

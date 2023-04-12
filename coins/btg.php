@@ -13,10 +13,10 @@
     <body>
         <div class="topbar">
             <div class="topbar-title">
-                <h1><a href="../index.html#top">Cryptopow</a></h1>
+                <h1><a href="../index.php#top">Cryptopow</a></h1>
             </div>
             <div class="topbar-menu">
-                <a href="../index.html#top">Home</a>
+                <a href="../index.php#top">Home</a>
                 <a href="../help.php">Help</a>
                 <a href="../about.html">About</a>
             </div>

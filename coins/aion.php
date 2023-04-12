@@ -27,8 +27,12 @@
             <h3 class="title">Aion<br>(AION)</h3>
             <br>
             <h3 class="title">
-                <form action="../watch/aion.php" method="post">
-                    <input type="submit" value="Wishlist" name="submit">
+                <form action="../watch/btg.php" method="post">
+                    <?php
+
+                    include '../watch/aion.php';
+                    
+                    ?>
                 </form>
             </h3>
             <img class="image" src="https://cryptologos.cc/logos/aion-aion-logo.png?v=023" alt="image of Aion" width="18%">

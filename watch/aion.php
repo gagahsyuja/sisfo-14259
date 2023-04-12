@@ -4,26 +4,27 @@ session_start();
 
 include_once '../conn.php';
 
-if (isset($_POST['submit']))
+$dbname = $_SESSION['uname'];
+
+$sql = "SELECT * FROM $dbname WHERE watchlist_id = '1'";
+$exist = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($exist) > 0)
 {
-    $dbname = $_SESSION["uname"];
+    echo '
+    <td><button type="submit" name="submitAion"><i class="fa-regular fa-eye fa-2x"></i></button></td>
+    <td><button type="submit" name="submitBtg"><i class="fa-regular fa-eye fa-2x"></i></button></td>
+    <td><button type="submit" name="submitFlux"><i class="fa-regular fa-eye fa-2x"></i></button></td>';
+    
+}
 
-    $sql = "INSERT INTO `$dbname` (`watchlist_id`) VALUES ('1')";
-    $query = "SELECT * FROM $dbname WHERE watchlist_id = '1'";
-    $duplicate = mysqli_query($conn, $query);
-
-    if (mysqli_num_rows($duplicate) > 0)
-    {
-        echo '<script>alert("It\'s Already There")</script>';
-    }
-
-    else
-    {
-        if (mysqli_query($conn, $sql))
-        {
-            echo '<script>alert("Added to wishlist")</script>';
-        }
-    }
+else
+{
+    
+    echo '
+    <td><button type="submit" name="submitAion"><i class="fa-regular fa-eye fa-2x"></i></button></td>
+    <td><button type="submit" name="submitBtg"><i class="fa-regular fa-eye fa-2x"></i></button></td>
+    <td><button type="submit" name="submitFlux"><i class="fa-regular fa-eye fa-2x"></i></button></td>';
 }
 
 ?>

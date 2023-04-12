@@ -15,26 +15,11 @@
                 <h1><a href="./index.php#top">Cryptopow</a></h1>
             </div>
             <div class="topbar-menu">
-                <a href="./index.php#top">Home</a>
-                <a href="./help.php">Help</a>
+                <!-- <a href="./index.php#top"><i class="fa-solid fa-house"></i></a> -->
                 <a href="./about.html">About</a>
-
-                <?php
-                
-                session_start();
-
-                if (!isset($_SESSION['uname']))
-                {
-                    echo '<a href="./login.html"><i class="fa-solid fa-user-large"></i></a>';
-                }
-                
-                else
-                {
-                    echo '<a href="./logged.php"><i class="fa-solid fa-user-large"></i> ' . $_SESSION["uname"] . '</a>';
-                    
-                }
-
-                ?>
+                <a href="./help.php">Help</a>
+                <a href="./watchlist.php">Watchlist</a>
+                <?php include './php/user.php'; ?>
             </div>
         </div>
         <img src="./img/banner.png" alt="banner" width="100%">
@@ -43,7 +28,6 @@
                 <a href="#equihash">Equihash</a>
                 <a href="#ethash">Ethash</a>
                 <a href="#kawpow">KawPow</a>
-                <!-- <a href="#">Etchash</a> -->
             </div>
         </div>
         <br>
@@ -67,6 +51,19 @@
                 <!-- FLUX -->
                 <td><a href="./coins/flux.php"><img src="https://cryptologos.cc/logos/zel-flux-logo.png?v=023" alt="image of Flux" width="18%"></a></td>
             </tr>
+            <tr class="wish-box">
+                <form action="./equihash.php" method="post">
+                    <?php
+
+                    echo '
+                    <td><button type="submit" name="submitAion"><i class="fa-regular fa-eye fa-2x"></i></button></td>
+                    <td><button type="submit" name="submitBtg"><i class="fa-regular fa-eye fa-2x"></i></button></td>
+                    <td><button type="submit" name="submitFlux"><i class="fa-regular fa-eye fa-2x"></i></button></td>';
+
+                    ?>
+
+                </form>
+            </tr>
         </table>
         <div id="ethash" style="height: 120px;"></div>
         <h1 class="link">Ethash</h1>
@@ -86,6 +83,13 @@
                 <!-- ZIL -->
                 <td><a href="./coins/zil.php"><img src="https://cryptologos.cc/logos/zilliqa-zil-logo.png?v=023" alt="image of Zilliqa" width="18%"></a></td>
             </tr>
+            <tr class="wish-box">
+                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
+                </div>
+                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
+
+                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
+            </tr>
         </table>
         <div id="kawpow" style="height: 120px;"></div>
         <h1 class="link">KawPow</h1>
@@ -104,6 +108,14 @@
                 <td><a href="./coins/rvn.php"><img src="https://cryptologos.cc/logos/ravencoin-rvn-logo.png?v=023" alt="image of Ravencoin" width="18%"></a></td>
                 <!-- ARL -->
                 <td><a href="./coins/arl.php"><img src="./img/arl.png" alt="image of Arielcoin" width="18%"></a></td>
+            </tr>
+            <tr class="wish-box">
+                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
+                </div>
+                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
+
+                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
+            </tr>
         </table>
     </div>
     <br><br><br><br>

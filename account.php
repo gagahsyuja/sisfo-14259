@@ -14,7 +14,7 @@
     <body>
         <div class="topbar">
             <div class="topbar-title">
-                <h1 class="topbar-title"><a href="./index.php">Cryptopow</a></h1>
+                <h1 class="topbar-title"><a href="./index.html">Cryptopow</a></h1>
             </div>
             <div class="topbar-menu">
                 <a href="./index.php">Home</a>
@@ -24,19 +24,28 @@
         </div>
         <div class="about">
             <br><br>
-            <h1><strong>Watchlist</strong></h1>
-            <form action="./logout.php" method="post">
-                <input type="submit" value="Logout" name="submit">
-            </form>
-
-            <!-- <div class="aboutme">
+            <h1><strong>Hi there, <?php session_start(); echo $_SESSION['uname']; ?></strong></h1>
+            <!-- <p>I use linux btw</p> -->
+            <br><br>
+            <div class="aboutme">
                 <div class="user">
-                    <i class="fa-solid fa-user"></i><p>Aion</p>
+                    <i class="fa-solid fa-user"></i><p>Gagah Syuja</p>
                 </div>
-            </div> -->
-
-            <?php include './php/watchlist.php' ?>
-
+                <br><br>
+                <div class="nim">
+                    <i class="fa-solid fa-id-card-clip"></i><p>A11.2022.14259</p>
+                </div>
+                <br><br>
+                <div class="group">
+                    <i class="fa-solid fa-people-group"></i><p>A11.4107</p>
+                </div>
+            </div>
+            <br><br>
+            <div class="social">
+                <a href="https://github.com/gagahsyuja" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+                <a href="https://instagram.com/gagahsyuja__" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://www.facebook.com/gagah.s.abdullah" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+            </div>
         </div>
         <br><br><br><br>
         <div class="botbar">
