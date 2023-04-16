@@ -26,18 +26,23 @@
         <div class="vram-box">
             <div class="vram">
                 <br>
-                <form action="./php/regist.php" method="post">
+                <form action="" method="post">
                     <label for="uname">Username</label><br>
-                    <input type="text" name="uname"><br><br>
+                    <input type="text" name="uname" required><br><br>
                     <label for="passwd">Password</label><br>
-                    <input type="password" name="passwd"><br><br>
+                    <input type="password" name="passwd" required><br><br>
                     <label for="passwd">Repeat Password</label><br>
-                    <input type="password" name="confirm"><br><br>
+                    <input type="password" name="confirm" required><br><br>
                     <input type="submit" value="Register" name="submit"><br><br>
-                    <a href="./login.html">Back to Login</a>
+                    <a href="./login.php">Back to Login</a>
                 </form>
                 <br><br>
             </div>
+            <div class="recommend-outside" id="popup-1">
+				<div class="recommend" id="popup">
+					<?php include './php/regist.php'; ?>
+				</div>
+			</div>
         </div>
         <br><br><br><br>
         <div class="botbar">
@@ -51,5 +56,18 @@
                 <a href="https://www.facebook.com/gagah.s.abdullah" target="_blank"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </div>
+        <script>
+		
+            let popup = document.getElementById("popup");
+			let popup1 = document.getElementById("popup-1");
+
+            function closePopup()
+            {
+                popup.style.display = 'none';
+				popup1.style.display = 'none';
+                window.location = './login.php';
+            }
+
+        </script>
     </body>
 </html>

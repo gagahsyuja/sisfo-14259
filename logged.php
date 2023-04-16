@@ -25,7 +25,7 @@
         <div class="about">
             <br><br>
             <h1><strong>Watchlist</strong></h1>
-            <form action="./logout.php" method="post">
+            <form action="./php/logout.php" method="post">
                 <input type="submit" value="Logout" name="submit">
             </form>
 

@@ -517,7 +517,7 @@ table h3 {
     color: #d79921;
 }
 
-.recommend-outside {
+.recommend-outside, .register-outside {
 	display: none;
 	position: fixed;
 	z-index: 1;
@@ -529,7 +529,7 @@ table h3 {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
-.recommend {
+.recommend, .register {
     text-align: center;
     color: #d79921;
     font-weight: bolder;
@@ -547,7 +547,7 @@ table h3 {
 	box-shadow: 10px 10px #fabd2f;
 }
 
-.recommend-open {
+.recommend-open, .register-open {
 	display: block;
 }
 

@@ -77,14 +77,25 @@ function getWatchlist()
     }
 }
 
-if (isEmpty() == FALSE)
+session_start();
+
+if (isset($_SESSION['uname']))
 {
-    getWatchlist();
+    if (isEmpty() == FALSE)
+    {
+        getWatchlist();
+    }
+    
+    else
+    {
+        echo '<h1>Empty</h1>';
+    }
 }
 
 else
 {
-    echo '<h1>Empty</h1>';
+    echo '<h2>You have to be logged in in order to use this feature</h2>';
 }
+
 
 ?>

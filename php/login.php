@@ -7,7 +7,7 @@ if (isset($_POST['submit']))
     $uname = $_POST['uname'];
     $passwd = $_POST['passwd'];
 
-    $sql = "SELECT * FROM `accounts` WHERE `uname` = '$uname'";
+    $sql = "SELECT * FROM `account` WHERE `uname` = '$uname'";
     $count = mysqli_query($conn, $sql);
     
     if (mysqli_num_rows($count) > 0)

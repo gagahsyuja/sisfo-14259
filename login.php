@@ -32,7 +32,7 @@
                     <label for="passwd">Password</label><br>
                     <input type="password" name="passwd"><br><br>
                     <input type="submit" value="Login" name="submit"><br><br>
-                    <a href="./regist.html">Register Instead</a>
+                    <a href="./regist.php">Register Instead</a>
                 </form>
                 <br><br>
             </div>

@@ -29,14 +29,13 @@ if (isset($_POST['submit']))
 
     else
     {
-        $id = uniqid();
         $sql = "INSERT INTO `account` (`uname`, `passwd`) VALUES ('$uname', '$passwd_hashed')";
     
         if (mysqli_query($conn, $sql))
         {
             echo '<style>.recommend{display: block;} .recommend-outside{display: block;}</style>';
             echo '<h2>User <span style="color: #fabd2f;">' . $uname . '</span> created successfully</h2>';
-            echo '<button onclick="closePopup()" class="close">Login Now</button>';
+            echo '<button onclick="closePopup()" class="close">Close</button>';
         }
     }
 }

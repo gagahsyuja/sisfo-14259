@@ -25,9 +25,14 @@
         <div class="about">
             <br><br>
             <h1><strong>Hi there, <?php session_start(); echo $_SESSION['uname']; ?></strong></h1>
-            <form action="./logout.php" method="post">
+            <form action="" method="post">
                 <input type="submit" value="Logout" name="submit">
             </form>
+            <div class="recommend-outside" id="popup">
+                <div class="recommend" id="popup-1">
+                    <?php include './php/logout.php' ?>
+                </div>
+            </div>
             <!-- <p>I use linux btw</p> -->
             <br><br>
             <div class="aboutme">
@@ -62,5 +67,18 @@
                 <a href="https://www.facebook.com/gagah.s.abdullah" target="_blank"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </div>
+        <script>
+		
+            let popup = document.getElementById("popup");
+			let popup1 = document.getElementById("popup-1");
+
+            function closePopup()
+            {
+                popup.style.display = 'none';
+				popup1.style.display = 'none';
+                window.location = './index.php';
+            }
+
+        </script>
     </body>
 </html>
