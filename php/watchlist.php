@@ -33,6 +33,18 @@ function getName(int $fav)
     return $name;
 }
 
+function getLogo(int $fav)
+{
+    include './conn.php';
+
+    $sql = "SELECT * FROM `coin` WHERE coin_id = $fav";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $name = $row['coin_image'];
+    
+    return $name;
+}
+
 function getWatchlist()
 {
     session_start();
@@ -49,15 +61,17 @@ function getWatchlist()
     {
         $watch = $row['watchlist_id'];
         $name = getName($watch);
+        $logo = getLogo($watch);
 
         echo '<div class="aboutme">
         <div class="user">
             <i class="fa-solid fa-user"></i><p>' . $name . '</p>
         </div>
-        </div>
+        <img src="' . $logo . '" width="18%">
         <form action="./watch/' . $del[$watch - 1] . '.php" method="post">
             <input type="submit" value="Remove" name="input">
-        </form>';
+        </form>
+        </div>';
     }
 }
 
