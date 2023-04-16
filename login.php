@@ -26,7 +26,7 @@
         <div class="about">
             <div class="vram">
                 <br>
-                <form action="./php/login.php" method="POST">
+                <form action="" method="POST">
                     <label for="uname">Username</label><br>
                     <input type="text" name="uname"><br><br>
                     <label for="passwd">Password</label><br>
@@ -34,6 +34,11 @@
                     <input type="submit" value="Login" name="submit"><br><br>
                     <a href="./regist.php">Register Instead</a>
                 </form>
+                <div class="recommend-outside" id="popup">
+                    <div class="recommend" id="popup-1">
+                        <?php include './php/login.php'; ?>
+                    </div>
+                </div>
                 <br><br>
             </div>
         </div>
@@ -49,5 +54,17 @@
                 <a href="https://www.facebook.com/gagah.s.abdullah" target="_blank"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </div>
+        <script>
+		
+            let popup = document.getElementById("popup");
+			let popup1 = document.getElementById("popup-1");
+
+            function closePopup()
+            {
+                popup.style.display = 'none';
+				popup1.style.display = 'none';
+            }
+
+        </script>
     </body>
 </html>
