@@ -25,6 +25,9 @@
         <div class="about">
             <br><br>
             <h1><strong>Hi there, <?php session_start(); echo $_SESSION['uname']; ?></strong></h1>
+            <form action="./logout.php" method="post">
+                <input type="submit" value="Logout" name="submit">
+            </form>
             <!-- <p>I use linux btw</p> -->
             <br><br>
             <div class="aboutme">
