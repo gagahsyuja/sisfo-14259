@@ -10,7 +10,7 @@ $sql = "DELETE FROM $dbname WHERE watchlist_id = 1";
 
 if (mysqli_query($conn, $sql))
 {
-    echo '<script>alert("Removed from Watchlist")</script>';
+    header("Location: ./aionX.php");
 }
 
 ?>

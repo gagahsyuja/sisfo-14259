@@ -35,7 +35,8 @@
 
                     $dbname = $_SESSION['uname'];
 
-                    $sql = "SELECT * FROM $dbname WHERE watchlist_id = '2'";
+                    $sql = "SELECT * FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = '2'";
+                    
                     $exist = mysqli_query($conn, $sql);
 
                     if (mysqli_num_rows($exist) > 0)

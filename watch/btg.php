@@ -8,10 +8,10 @@ if (isset($_POST['submit']))
 {
     $dbname = $_SESSION["uname"];
 
-    $sql = "INSERT INTO `$dbname` (`watchlist_id`) VALUES ('2')";
-    $query = "SELECT * FROM $dbname WHERE watchlist_id = 2";
+    $sql = "INSERT INTO `watchlist` (`uname`, `watchlist_id`) VALUES ('$dbname', '2')";
+    $query = "SELECT * FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = 2";
     $duplicate = mysqli_query($conn, $query);
-    $remove = "DELETE FROM $dbname WHERE watchlist_id = 2";
+    $remove = "DELETE FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = 2";
 
     if (mysqli_num_rows($duplicate) > 0)
     {

@@ -32,7 +32,8 @@ if (isset($_POST['submit']))
 
     else
     {
-        if (mysqli_query($conn, $sql) && mysqli_query($conn, $watch))
+        // if (mysqli_query($conn, $sql) && mysqli_query($conn, $watch))
+        if (mysqli_query($conn, $sql))
         {
             header('Location: ../login.html');
             echo "<script>alert('Register Success')</script>";
