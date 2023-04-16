@@ -73,6 +73,10 @@ body {
     transition: 0.3s;
 }
 
+.topbar-menu a:not(:hover) {
+    transition: 0.3s;
+}
+
 .topbar a:link {
     color: #3c3836;
 }
@@ -94,9 +98,10 @@ body {
     margin-right: 20%;
     /* border: 5px solid #fabd2f; */
     border-radius: 15px;
+    max-width: 80%;
 }
 
-.about h1 {
+.about h1, .about-watchlist h1 {
     /* font-weight: 100; */
     color: #fabd2f;
     text-align: center;
@@ -104,21 +109,43 @@ body {
     font-size: 30pt;
 }
 
-.about p {
+.about p, .about-watchlist p {
     color: #b57614;
     text-align: center;
     padding-top: 1%;
 }
 
-.about img {
+.about img, .about-watchlist img {
     display: block;
     padding-top: 3%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.about input {
+.about-watchlist {
+    display: flex;
+    flex-direction: column;
+    background-color: #3c3836;
+    box-shadow: 0px 0px 50px #282828;
+    margin-top: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 15px;
+}
+
+.about-watchlist form {
     text-align: center;
+}
+
+.about-watchlist-input {
+    padding-left: 25px;
+    padding-right: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.about-watchlist-img {
+    background-image: none;
 }
 
 .navbar {
@@ -163,6 +190,10 @@ body {
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navbar-menu a:not(:hover) {
     transition: 0.3s;
 }
 
@@ -220,6 +251,10 @@ table {
     margin-bottom: 5px;
     margin-left: 28px;
     margin-right: 28px;
+}
+
+.table-logo a:not(:hover) {
+    transition: 0.3s;
 }
 
 .table-coin-name {
@@ -633,7 +668,6 @@ button[type=submit]:hover {
     background-color: #d79921;
     height: 50px;
     border: 1px solid transparent;
-    border-radius: 15px;
     box-shadow: 0px 0px 18px #282828;
 }
 
@@ -645,4 +679,8 @@ button[type=submit]:hover {
 
     /* margin-left: 47%; */
     /* padding-left: 50%; */
+}
+
+.wish-box td {
+    border-radius: 15px;
 }

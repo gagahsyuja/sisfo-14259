@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cryptopow - AION</title>
+        <title>Cryptopow - Watchlist</title>
         <link rel="stylesheet" href="./css/style.css">
         <link rel="icon" href="./img/logo.png">
         <link rel="stylesheet" href="https://use.typekit.net/vub1dne.css">
@@ -22,7 +22,7 @@
                 <a href="./about.html#top">About</a>
             </div>
         </div>
-        <div class="about">
+        <div class="about-watchlist">
             <br><br>
             <h1><strong>Watchlist</strong></h1>
             <br><br>

@@ -59,19 +59,21 @@ function getWatchlist()
 
     while ($row = mysqli_fetch_assoc($result))
     {
-        $watch = $row['watchlist_id'];
-        $name = getName($watch);
-        $logo = getLogo($watch);
+        $id = $row['watchlist_id'];
+        $name = getName($id);
+        $logo = getLogo($id);
 
         echo '<div class="aboutme">
         <div class="user">
             <i class="fa-solid fa-user"></i><p>' . $name . '</p>
         </div>
-        <img src="' . $logo . '" width="18%">
-        <form action="./watch/' . $del[$watch - 1] . '.php" method="post">
-            <input type="submit" value="Remove" name="input">
+        <img class="about-watchlist-img" src="' . $logo . '" width="18%">
+        <br><br>
+        <form action="./watch/' . $del[$id - 1] . '.php" method="post">
+            <input class="about-watchlist-input" type="submit" value="Remove" name="input">
         </form>
-        </div>';
+        </div>
+        <br><br><br><br>';
     }
 }
 

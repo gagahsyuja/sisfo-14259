@@ -31,7 +31,6 @@
                 <a href="#kawpow">KawPow</a>
             </div>
         </div>
-        <br>
         <div id="equihash" style="height: 100px;"></div>
         <div class="contents">
         <br>
