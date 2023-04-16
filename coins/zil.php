@@ -25,6 +25,16 @@
         <div class="box">
             <br><br>
             <h3 class="title">Zilliqa<br>(ZIL)</h3>
+            <h3 class="title">
+                <form action="../watch/zil.php" method="post">
+                    <?php
+
+                    $id = 6;
+                    include '../php/icon.php';
+                    
+                    ?>
+                </form>
+            </h3>
             <img class="image" src="https://cryptologos.cc/logos/zilliqa-zil-logo.png?v=023" alt="image of Aion" width="18%">
             <br><br>
             <table class="details">

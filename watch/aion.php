@@ -4,27 +4,29 @@ session_start();
 
 include_once '../conn.php';
 
-$dbname = $_SESSION['uname'];
-
-$sql = "SELECT * FROM $dbname WHERE watchlist_id = '1'";
-$exist = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($exist) > 0)
+if (isset($_POST['submit']))
 {
-    echo '
-    <td><button type="submit" name="submitAion"><i class="fa-regular fa-eye fa-2x"></i></button></td>
-    <td><button type="submit" name="submitBtg"><i class="fa-regular fa-eye fa-2x"></i></button></td>
-    <td><button type="submit" name="submitFlux"><i class="fa-regular fa-eye fa-2x"></i></button></td>';
-    
-}
+    $dbname = $_SESSION["uname"];
 
-else
-{
-    
-    echo '
-    <td><button type="submit" name="submitAion"><i class="fa-regular fa-eye fa-2x"></i></button></td>
-    <td><button type="submit" name="submitBtg"><i class="fa-regular fa-eye fa-2x"></i></button></td>
-    <td><button type="submit" name="submitFlux"><i class="fa-regular fa-eye fa-2x"></i></button></td>';
+    $sql = "INSERT INTO `watchlist` (`uname`, `watchlist_id`) VALUES ('$dbname', '1')";
+    $query = "SELECT * FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = 1";
+    $duplicate = mysqli_query($conn, $query);
+    $remove = "DELETE FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = 1";
+
+    if (mysqli_num_rows($duplicate) > 0)
+    {
+        mysqli_query($conn, $remove);
+        header("Location: ../coins/aion.php");
+    }
+
+    else
+    {
+        if (mysqli_query($conn, $sql))
+        {
+            // echo '<script>alert("Added to wishlist")</script>';
+            header("Location: ../coins/aion.php");
+        }
+    }
 }
 
 ?>

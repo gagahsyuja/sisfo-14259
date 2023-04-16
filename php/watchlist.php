@@ -6,8 +6,6 @@ include_once './conn.php';
 
 $dbname = $_SESSION['uname'];
 
-// $sql = "SELECT * FROM `$dbname";
-
 $sql = "SELECT * FROM `watchlist` WHERE `uname` = '$dbname'";
 
 $result = mysqli_query($conn, $sql);

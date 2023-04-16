@@ -25,6 +25,16 @@
         <div class="box">
             <br><br>
             <h3 class="title">EthereumPoW<br>(ETHW)</h3>
+            <h3 class="title">
+                <form action="../watch/ethw.php" method="post">
+                    <?php
+
+                    $id = 5;
+                    include '../php/icon.php';
+                    
+                    ?>
+                </form>
+            </h3>
             <img class="image" src="https://s2.coinmarketcap.com/static/img/coins/200x200/21296.png" alt="image of EthereumPoW" width="18%">
             <br><br>
             <table class="details">

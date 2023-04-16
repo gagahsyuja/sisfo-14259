@@ -25,6 +25,16 @@
         <div class="box">
             <br><br>
             <h3 class="title">Ethereum Classic<br>(ETC)</h3>
+            <h3 class="title">
+                <form action="../watch/etc.php" method="post">
+                    <?php
+
+                    $id = 4;
+                    include '../php/icon.php';
+                    
+                    ?>
+                </form>
+            </h3>
             <img class="image" src="https://cryptologos.cc/logos/ethereum-classic-etc-logo.png?v=023" alt="image of Ethereum Classic" width="18%">
             <br><br>
             <table class="details">

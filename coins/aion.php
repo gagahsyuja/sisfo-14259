@@ -25,12 +25,12 @@
         <div class="box">
             <br><br>
             <h3 class="title">Aion<br>(AION)</h3>
-            <br>
             <h3 class="title">
-                <form action="../watch/btg.php" method="post">
+                <form action="../watch/aion.php" method="post">
                     <?php
 
-                    include '../watch/aion.php';
+                    $id = 1;
+                    include '../php/icon.php';
                     
                     ?>
                 </form>

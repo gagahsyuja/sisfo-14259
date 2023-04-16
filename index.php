@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -52,16 +53,8 @@
                 <td><a href="./coins/flux.php"><img src="https://cryptologos.cc/logos/zel-flux-logo.png?v=023" alt="image of Flux" width="18%"></a></td>
             </tr>
             <tr class="wish-box">
-                <form action="./equihash.php" method="post">
-                    <?php
-
-                    echo '
-                    <td><button type="submit" name="submitAion"><i class="fa-regular fa-eye fa-2x"></i></button></td>
-                    <td><button type="submit" name="submitBtg"><i class="fa-regular fa-eye fa-2x"></i></button></td>
-                    <td><button type="submit" name="submitFlux"><i class="fa-regular fa-eye fa-2x"></i></button></td>';
-
-                    ?>
-
+                <form action="./php/equihash.php" method="post">
+                    <?php include './php/equihash-icon.php'; ?>
                 </form>
             </tr>
         </table>
@@ -84,11 +77,9 @@
                 <td><a href="./coins/zil.php"><img src="https://cryptologos.cc/logos/zilliqa-zil-logo.png?v=023" alt="image of Zilliqa" width="18%"></a></td>
             </tr>
             <tr class="wish-box">
-                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
-                </div>
-                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
-
-                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
+                <form action="./php/ethash.php" method="post">
+                    <?php include './php/ethash-icon.php'; ?>
+                </form>
             </tr>
         </table>
         <div id="kawpow" style="height: 120px;"></div>
@@ -110,11 +101,9 @@
                 <td><a href="./coins/arl.php"><img src="./img/arl.png" alt="image of Arielcoin" width="18%"></a></td>
             </tr>
             <tr class="wish-box">
-                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
-                </div>
-                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
-
-                <td><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
+                <form action="./php/kawpow.php" method="post">
+                    <?php include './php/kawpow-icon.php'; ?>
+                </form>
             </tr>
         </table>
     </div>

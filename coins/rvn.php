@@ -25,6 +25,16 @@
         <div class="box">
             <br><br>
             <h3 class="title">Ravencoin<br>(RVN)</h3>
+            <h3 class="title">
+                <form action="../watch/rvn.php" method="post">
+                    <?php
+
+                    $id = 8;
+                    include '../php/icon.php';
+                    
+                    ?>
+                </form>
+            </h3>
             <img class="image" src="https://cryptologos.cc/logos/ravencoin-rvn-logo.png?v=023" alt="image of Aion" width="18%">
             <br><br>
             <table class="details">

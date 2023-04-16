@@ -24,6 +24,16 @@
         <div class="box">
             <br><br>
             <h3 class="title">Arielcoin<br>(ARL)</h3>
+            <h3 class="title">
+                <form action="../watch/arl.php" method="post">
+                    <?php
+
+                    $id = 9;
+                    include '../php/icon.php';
+                    
+                    ?>
+                </form>
+            </h3>
             <img class="image" src="../img/arl.png" alt="image of Aion" width="18%">
             <br><br>
             <table class="details">

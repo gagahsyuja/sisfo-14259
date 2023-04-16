@@ -4,19 +4,28 @@ session_start();
 
 include_once '../conn.php';
 
-$dbname = $_SESSION['uname'];
-
-$sql = "SELECT * FROM $dbname WHERE watchlist_id = '3'";
-$exist = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($exist) > 0)
+if (isset($_POST['submit']))
 {
-    echo '<br><button type="submit" name="submit"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button>';
-}
+    $dbname = $_SESSION["uname"];
 
-else
-{
-    echo '<br><button type="submit" name="submit"><i class="fa-sharp fa-regular fa-eye fa-2x"></i></button>';
+    $sql = "INSERT INTO `watchlist` (`uname`, `watchlist_id`) VALUES ('$dbname', '3')";
+    $query = "SELECT * FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = 3";
+    $duplicate = mysqli_query($conn, $query);
+    $remove = "DELETE FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = 3";
+
+    if (mysqli_num_rows($duplicate) > 0)
+    {
+        mysqli_query($conn, $remove);
+        header("Location: ../coins/flux.php");
+    }
+
+    else
+    {
+        if (mysqli_query($conn, $sql))
+        {
+            header("Location: ../coins/flux.php");
+        }
+    }
 }
 
 ?>

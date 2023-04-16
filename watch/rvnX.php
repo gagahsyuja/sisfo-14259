@@ -6,7 +6,7 @@ include_once '../conn.php';
 
 $dbname = $_SESSION['uname'];
 
-$sql = "DELETE FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = 3";
+$sql = "DELETE FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = 8";
 
 if (mysqli_query($conn, $sql))
 {

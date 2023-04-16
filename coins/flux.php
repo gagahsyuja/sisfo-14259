@@ -27,7 +27,12 @@
             <h3 class="title">Flux<br>(FLUX)</h3>
             <h3 class="title">
                 <form action="../watch/flux.php" method="post">
-                    <input type="submit" value="Wishlist" name="submit">
+                    <?php
+
+                    $id = 3;
+                    include '../php/icon.php';
+                    
+                    ?>
                 </form>
             </h3>
             <img class="image" src="https://cryptologos.cc/logos/zel-flux-logo.png?v=023" alt="image of Flux" width="18%">

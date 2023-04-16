@@ -25,6 +25,16 @@
         <div class="box">
             <br><br>
             <h3 class="title">Neoxa<br>(NEOX)</h3>
+            <h3 class="title">
+                <form action="../watch/neox.php" method="post">
+                    <?php
+
+                    $id = 7;
+                    include '../php/icon.php';
+                    
+                    ?>
+                </form>
+            </h3>
             <img class="image" src="https://neoxa.net/wp-content/uploads/2022/10/Neoxa_Logo_1080p-1.png" alt="image of Aion" width="18%">
             <br><br>
             <table class="details">
