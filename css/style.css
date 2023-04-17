@@ -6,18 +6,16 @@
     scroll-behavior: smooth;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     font-family: Roboto Mono;
     background-color: #3c3836;
-    /* overflow: hidden; */
-    /* scroll-behavior: smooth; */
-    /* min-height: 3000px; */
 }
 
 .table-home {
-    /* table-layout: fixed; */
-    /* text-align: center; */
-    /* align-items: center; */
     border-spacing: 30px;
     border: 1px solid transparent;
 }
@@ -31,24 +29,94 @@ body {
     z-index: 1;
     overflow: hidden;
     height: 85px;
-    /* margin-top: -8px;
-    margin-left: -8px;
-    margin-right: -8px; */
+}
+
+header {
+    
+    top: 0;
+    position: sticky;
+    display: flex;
+    overflow: hidden;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 5%;
+    background-color: #d79921;
+    box-shadow: 0px 0px 18px#3c3836;
+}
+
+header ul {
+    list-style: none;
+}
+
+header li {
+    display: inline-block;
+    /* padding: 0px 10px; */
+}
+
+header li a {
+    color: #3c3836;
+    font-size: large;
+    /* padding: 18px 8px; */
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 10px;
+}
+
+
+.topbar-link a:hover {
+    background-color: #b57614;
+    transition: 0.3s;
+}
+
+.topbar-link a:not(:hover) {
+    transition: 0.3s;
 }
 
 .topbar-title {
-    float: left;
-    text-align: left;
-}
-
-.topbar-title h1 {
-    padding-left: 70%;
-    margin-top: 15px;
+    margin-right: auto;
     color: #3c3836;
 }
 
-.topbar-title a {
-    text-decoration: none;
+.topbar-title h1 {
+    color: #3c3836;
+}
+
+.topbar-title h1:hover {
+    transition: 0.3s;
+    text-shadow: 0px 0px 10px #3c3836;
+}
+
+.topbar-title h1:not(:hover) {
+    transition: 0.3s;
+}
+
+header button {
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #b57614;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+header button:hover {
+    /* background-color: #d79921; */
+    box-shadow: 0px 0px 5px #282828;
+    transition: 0.3s;
+}
+
+header button:not(:hover) {
+    transition: 0.3s;
+}
+
+.topbar-account button {
+    margin-left: 10px;
+    font-size: large;
+    color: #3c3836;
 }
 
 .topbar-menu {
@@ -182,14 +250,14 @@ body {
     padding-left: 18px;
     padding-right: 18px;
     font-size: large;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 10px;
     /* float: none; */
 }
 
 .navbar-menu a:hover {
     background-color: #b57614;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 10px;
     transition: 0.3s;
 }
 
@@ -347,6 +415,10 @@ table h3 {
     transition: 0.3s;
 }
 
+.details-link a:not(:hover) {
+    transition: 0.3s;
+}
+
 .details-link-title {
     background-color: #d79921;
     /* min-height: 30px; */
@@ -411,6 +483,10 @@ table h3 {
 .botbar-social a:hover {
     color: #fabd2f;
     /* text-shadow: 0px 0px 5px #fabd2f; */
+    transition: 0.3s;
+}
+
+.botbar-social a:not(:hover) {
     transition: 0.3s;
 }
 
@@ -484,6 +560,10 @@ table h3 {
 .social a:hover {
     color: #fabd2f;
     text-shadow: 0px 0px 10px#fabd2f;
+    transition: 0.3s;
+}
+
+.social a:not(:hover) {
     transition: 0.3s;
 }
 
@@ -573,6 +653,10 @@ table h3 {
     transition: 0.3s;
 }
 
+.recommend a:not(:hover) {
+    transition: 0.3s;
+}
+
 input[type=text] {
     height: 30px;
     width: 15%;
@@ -633,6 +717,10 @@ input[type=submit]:hover {
     transition: 0.2s;
 }
 
+input[type=submit]:not(:hover) {
+    transition: 0.2s;
+}
+
 button[type=submit] {
     height: 35px;
     width: 5%;
@@ -645,6 +733,10 @@ button[type=submit] {
 button[type=submit]:hover {
 	background-color: #fabd2f;
 	color: #282828;
+    transition: 0.2s;
+}
+
+button[type=submit]:not(:hover) {
     transition: 0.2s;
 }
 
@@ -661,6 +753,10 @@ button[type=submit]:hover {
 .close:hover {
     background-color: #fabd2f;
 	color: #282828;
+    transition: 0.3s;
+}
+
+.close:not(:hover) {
     transition: 0.3s;
 }
 

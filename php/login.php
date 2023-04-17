@@ -24,19 +24,15 @@ if (isset($_POST['submit']))
 
         else
         {
-            // echo '<script>alert("password is incorrect")</script>';
             echo '<style>.recommend{display: block;} .recommend-outside{display: block;}</style>';
-            echo '<h2>Password is Incorrect</h2>';
+            echo '<h2><span style="color: #fabd2f;">Incorrect Password</span></h2>';
             echo '<button onclick="closePopup()" class="close">Close</button>';
         }
-        // echo '<script>alert("Login Success")</script>';
     }
     else
     {
-        // header('Location: login.php');
-        // echo '<script>alert("account not found")</script>';
         echo '<style>.recommend{display: block;} .recommend-outside{display: block;}</style>';
-        echo '<h2>Account not Found</h2>';
+        echo '<h2><span style="color: #fabd2f;">Account not Found</span></h2>';
         echo '<button onclick="closePopup()" class="close">Close</button>';
     }
 }

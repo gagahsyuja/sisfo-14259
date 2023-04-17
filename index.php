@@ -11,18 +11,18 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
     </head>
     <body>
-        <div class="topbar">
+        <!-- <div class="topbar">
             <div class="topbar-title">
                 <h1><a href="./index.php#top">Cryptopow</a></h1>
             </div>
             <div class="topbar-menu">
-                <!-- <a href="./index.php#top"><i class="fa-solid fa-house"></i></a> -->
                 <a href="./about.html">About</a>
                 <a href="./help.php">Help</a>
                 <a href="./watchlist.php">Watchlist</a>
-                <?php include './php/user.php'; ?>
+                <a href="#"><button style="float: right;" type="submit">Login</button></a>
             </div>
-        </div>
+        </div> -->
+        <?php include './php/topbar.php'; ?>
         <img src="./img/banner.png" alt="banner" width="100%">
         <div class="navbar">
             <div class="navbar-menu">

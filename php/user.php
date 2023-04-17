@@ -1,15 +1,13 @@
 <?php
 
-// session_start();
-
 if (!isset($_SESSION['uname']))
 {
-    echo '<a href="./login.php" style="margin-left: 0%; float: right;"><i class="fa-solid fa-user-large"></i></a>';
+    echo '<a class="topbar-account" href="./login.php"><button><i class="fa-solid fa-user-large"></i></button></a>';
 }
 
 else
 {
-    echo '<a href="./account.php" style="margin-left: 0%; float: right; padding-top: 8px; padding-bottom: 8px;"><i class="fa-solid fa-user-large"></i> ' . $_SESSION["uname"] . '</a>';
+    echo '<a class="topbar-account" href="./account.php"><button><i class="fa-solid fa-user-large"></i></button> ' . $_SESSION["uname"] . '</a>';
 }
 
 ?>

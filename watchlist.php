@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +13,7 @@
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
     </head>
     <body>
-        <div class="topbar">
+        <!-- <div class="topbar">
             <div class="topbar-title">
                 <h1 class="topbar-title"><a href="./index.php">Cryptopow</a></h1>
             </div>
@@ -21,7 +22,8 @@
                 <a href="./help.php">Help</a>
                 <a href="./about.html#top">About</a>
             </div>
-        </div>
+        </div> -->
+        <?php include './php/topbar.php'; ?>
         <div class="about-watchlist">
             <br><br>
             <h1><strong>Watchlist</strong></h1>
