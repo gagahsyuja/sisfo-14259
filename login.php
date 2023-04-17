@@ -25,8 +25,8 @@
         </div> -->
         <?php include './php/topbar.php'; ?>
         <br><br><br>
-        <div class="about">
-            <div class="vram">
+        <div class="login-box">
+            <div class="login">
                 <br>
                 <form action="" method="POST">
                     <label for="uname">Username</label><br>
@@ -34,7 +34,7 @@
                     <label for="passwd">Password</label><br>
                     <input type="password" name="passwd"><br><br>
                     <input type="submit" value="Login" name="submit"><br><br>
-                    <a href="./regist.php">Register Instead</a>
+                    <a href="./regist.php">Create an Account</a>
                 </form>
                 <div class="recommend-outside" id="popup">
                     <div class="recommend" id="popup-1">
@@ -46,7 +46,7 @@
         </div>
         <br><br><br><br>
         <div class="botbar">
-            <h1><span>&#169;2022</span>Cryptopow</h1>
+            <h1><span>&#169;2023</span>Cryptopow</h1>
             <div class="botbar-img">
                 <img src="./img/logo.png" alt="logo" width="15%">
             </div>

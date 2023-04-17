@@ -25,8 +25,8 @@
         </div> -->
         <?php include './php/topbar.php'; ?>
         <br><br><br>
-        <div class="vram-box">
-            <div class="vram">
+        <div class="login-box">
+            <div class="login">
                 <br>
                 <form action="" method="post">
                     <label for="uname">Username</label><br>
