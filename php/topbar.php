@@ -11,7 +11,13 @@ function user($isLogged)
 {
     $notLogged = '<a class="topbar-account" href="./login.php"><button><i class="fa-solid fa-user-large"></i></button></a>';
 
-    $logged = '<a class="topbar-account" href="./account.php"><button><i class="fa-solid fa-user-large"></i> ' . $_SESSION["uname"] . '</button></a>';
+    $logged = 
+    '<a class="topbar-account" href="./account.php"><button><i class="fa-solid fa-user-large"></i> ' . $_SESSION["uname"] . '</button></a>
+
+    <form action="" method="post">
+        <a class="topbar-account" href="#"><button name="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
+    </form>
+    ';
 
     if ($isLogged == FALSE)
     {

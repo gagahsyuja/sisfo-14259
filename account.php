@@ -28,11 +28,11 @@
             <br><br>
             <h1><strong>Hi there, <?php session_start(); echo $_SESSION['uname']; ?></strong></h1>
             <form action="" method="post">
-                <input type="submit" value="Logout" name="submit">
+                <input type="submit" value="Logout" name="logout">
             </form>
             <div class="recommend-outside" id="popup">
                 <div class="recommend" id="popup-1">
-                    <?php include './php/logout.php' ?>
+                    <?php include './php/logout.php'; ?>
                 </div>
             </div>
             <!-- <p>I use linux btw</p> -->

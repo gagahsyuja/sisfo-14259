@@ -4,44 +4,22 @@ include_once './conn.php';
 
 $dbname = $_SESSION['uname'];
 
-$sql = "SELECT * FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = '1'";
+$submit = array('submitAion', 'submitBtg', 'submitFlux', 'submitEtc', 'submitEthw', 'submitZil', 'submitNeox', 'submitRvn', 'submitArl');
 
-$exist = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($exist) > 0)
+for ($i = 1; $i < 4; $i++)
 {
-    echo '<td><button type="submit" name="submitAion"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>';
-}
+    $sql = "SELECT * FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = '$i'";
+    $exist = mysqli_query($conn, $sql);
 
-else
-{
-    echo '<td><button type="submit" name="submitAion"><i class="fa-regular fa-eye fa-2x"></i></button></td>';
-}
+    if (mysqli_num_rows($exist) > 0)
+    {
+        echo '<td><a href="#"><button type="submit" name="'. $submit[$i - 1] . '"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></a></td>';
+    }
 
-$sql = "SELECT * FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = '2'";
-$exist = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($exist) > 0)
-{
-    echo '<td><button type="submit" name="submitBtg"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>';
-}
-
-else
-{
-    echo '<td><button type="submit" name="submitBtg"><i class="fa-regular fa-eye fa-2x"></i></button></td>';
-}
-
-$sql = "SELECT * FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = '3'";
-$exist = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($exist) > 0)
-{
-    echo '<td><button type="submit" name="submitFlux"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>';
-}
-
-else
-{
-    echo '<td><button type="submit" name="submitFlux"><i class="fa-regular fa-eye fa-2x"></i></button></td>';
+    else
+    {
+        echo '<td><a href="#"><button type="submit" name="' . $submit[$i - 1] . '"><i class="fa-regular fa-eye fa-2x"></i></button></a></td>';
+    }
 }
 
 ?>

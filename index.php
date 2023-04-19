@@ -11,18 +11,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
     </head>
     <body>
-        <!-- <div class="topbar">
-            <div class="topbar-title">
-                <h1><a href="./index.php#top">Cryptopow</a></h1>
-            </div>
-            <div class="topbar-menu">
-                <a href="./about.html">About</a>
-                <a href="./help.php">Help</a>
-                <a href="./watchlist.php">Watchlist</a>
-                <a href="#"><button style="float: right;" type="submit">Login</button></a>
-            </div>
-        </div> -->
         <?php include './php/topbar.php'; ?>
+        <div class="recommend-outside" id="popup">
+            <div class="recommend" id="popup-1">
+                <?php include './php/logout.php'; ?>
+            </div>
+        </div>
         <img src="./img/banner.png" alt="banner" width="100%">
         <div class="navbar">
             <div class="navbar-menu">
@@ -118,5 +112,18 @@
             <a href="https://www.facebook.com/gagah.s.abdullah" target="_blank"><i class="fa-brands fa-facebook"></i></a>
         </div>
     </div>
+    <script>
+		
+        let popup = document.getElementById("popup");
+        let popup1 = document.getElementById("popup-1");
+
+        function closePopup()
+        {
+            popup.style.display = 'none';
+            popup1.style.display = 'none';
+            window.location = './index.php';
+        }
+
+    </script>
     </body>
 </html>

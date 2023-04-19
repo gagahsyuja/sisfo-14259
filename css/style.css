@@ -80,6 +80,7 @@ header li a {
 }
 
 .topbar-title h1 {
+    margin-bottom: 5px;
     color: #3c3836;
 }
 
@@ -761,20 +762,32 @@ button[type=submit]:not(:hover) {
 }
 
 .wish-box {
+    text-align: center;
     background-color: #d79921;
     height: 50px;
     border: 1px solid transparent;
     box-shadow: 0px 0px 18px #282828;
 }
 
+.wish-box a {
+    /* padding-left: 40%; */
+}
+
 .wish-box button {
+    padding-left: 5%;
+    padding-right: 10%;
+    /* margin-left: 47%; */
     /* text-align: center; */
-    margin-left: 40%;
+    /* margin-left: 40%;
     padding-left: 7%;
     padding-right: 13%;
-
+    padding-top: 1px; */
     /* margin-left: 47%; */
     /* padding-left: 50%; */
+}
+
+.wish-box button:hover {
+    background-color: #b57614;
 }
 
 .wish-box td {
