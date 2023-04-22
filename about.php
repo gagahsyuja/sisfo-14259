@@ -13,17 +13,12 @@
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
     </head>
     <body>
-        <!-- <div class="topbar">
-            <div class="topbar-title">
-                <h1 class="topbar-title"><a href="./index.html">Cryptopow</a></h1>
-            </div>
-            <div class="topbar-menu">
-                <a href="./index.php">Home</a>
-                <a href="./help.php">Help</a>
-                <a href="./about.html#top">About</a>
-            </div>
-        </div> -->
         <?php include './php/topbar.php'; ?>
+        <div class="recommend-outside" id="popup">
+            <div class="recommend" id="popup-1">
+                <?php include './php/logout.php'; ?>
+            </div>
+        </div>
         <div class="about">
             <br><br>
             <h1><strong>About Me</strong></h1>

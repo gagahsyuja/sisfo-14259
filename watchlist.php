@@ -10,20 +10,16 @@
         <link rel="icon" href="./img/logo.png">
         <link rel="stylesheet" href="https://use.typekit.net/vub1dne.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
     </head>
     <body>
-        <!-- <div class="topbar">
-            <div class="topbar-title">
-                <h1 class="topbar-title"><a href="./index.php">Cryptopow</a></h1>
-            </div>
-            <div class="topbar-menu">
-                <a href="./index.php">Home</a>
-                <a href="./help.php">Help</a>
-                <a href="./about.html#top">About</a>
-            </div>
-        </div> -->
         <?php include './php/topbar.php'; ?>
+        <div class="recommend-outside" id="popup">
+            <div class="recommend" id="popup-1">
+                <?php include './php/logout.php'; ?>
+            </div>
+        </div>
         <div class="about-watchlist">
             <br><br>
             <h1><strong>Watchlist</strong></h1>
@@ -31,6 +27,7 @@
 
             <?php include './php/watchlist.php'; ?>
 
+            <br><br><br><br>
         </div>
         <br><br><br><br>
         <div class="botbar">
@@ -45,4 +42,17 @@
             </div>
         </div>
     </body>
+    <script>
+		
+        let popup = document.getElementById("popup");
+        let popup1 = document.getElementById("popup-1");
+
+        function closePopup()
+        {
+            popup.style.display = 'none';
+            popup1.style.display = 'none';
+            window.location = './watchlist.php';
+        }
+
+    </script>
 </html>

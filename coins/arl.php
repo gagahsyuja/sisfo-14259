@@ -10,14 +10,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
     </head>
     <body>
-        <div class="topbar">
-            <div class="topbar-title">
-                <h1><a href="../index.php#top">Cryptopow</a></h1>
-            </div>
-            <div class="topbar-menu">
-                <a href="../index.php#top">Home</a>
-                <a href="../help.php">Help</a>
-                <a href="../about.html">About</a>
+        <?php include '../php/topbarcoin.php'; ?>
+        <div class="recommend-outside" id="popup">
+            <div class="recommend" id="popup-1">
+                <?php include '../php/logout.php'; ?>
             </div>
         </div>
         <br><br>
@@ -80,4 +76,17 @@
             </div>
         </div>
     </body>
+    <script>
+		
+        let popup = document.getElementById("popup");
+        let popup1 = document.getElementById("popup-1");
+
+        function closePopup()
+        {
+            popup.style.display = 'none';
+            popup1.style.display = 'none';
+            window.location = './arl.php';
+        }
+
+    </script>
 </html>

@@ -11,14 +11,10 @@
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body>
-        <div class="topbar">
-            <div class="topbar-title">
-                <h1><a href="../index.php#top">Cryptopow</a></h1>
-            </div>
-            <div class="topbar-menu">
-                <a href="../index.php#top">Home</a>
-                <a href="../help.php">Help</a>
-                <a href="../about.html">About</a>
+        <?php include '../php/topbarcoin.php'; ?>
+        <div class="recommend-outside" id="popup">
+            <div class="recommend" id="popup-1">
+                <?php include '../php/logout.php'; ?>
             </div>
         </div>
         <br><br>
@@ -82,4 +78,17 @@
         </div>
         <script src="../js/flux.js"></script>
     </body>
+    <script>
+		
+        let popup = document.getElementById("popup");
+        let popup1 = document.getElementById("popup-1");
+
+        function closePopup()
+        {
+            popup.style.display = 'none';
+            popup1.style.display = 'none';
+            window.location = './flux.php';
+        }
+
+    </script>
 </html>

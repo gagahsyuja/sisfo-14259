@@ -32,7 +32,7 @@ body {
 }
 
 header {
-    
+    z-index: 1;
     top: 0;
     position: sticky;
     display: flex;
@@ -106,7 +106,7 @@ header button {
 
 header button:hover {
     /* background-color: #d79921; */
-    box-shadow: 0px 0px 5px #282828;
+    box-shadow: 0px 0px 7px #282828;
     transition: 0.3s;
 }
 
@@ -118,6 +118,11 @@ header button:not(:hover) {
     margin-left: 10px;
     font-size: large;
     color: #3c3836;
+}
+
+#topbar-logout button:hover {
+    /* box-shadow: 0px 0px 7px #3c3836; */
+    color: #cc241d;
 }
 
 .topbar-menu {
@@ -769,10 +774,6 @@ button[type=submit]:not(:hover) {
     box-shadow: 0px 0px 18px #282828;
 }
 
-.wish-box a {
-    /* padding-left: 40%; */
-}
-
 .wish-box button {
     padding-left: 5%;
     padding-right: 10%;
@@ -820,5 +821,76 @@ button[type=submit]:not(:hover) {
 }
 
 .login a:not(:hover) {
+    transition: 0.3s;
+}
+
+.account {
+    /* padding-top: 1%; */
+    width: 100%;
+    text-align: center;
+    color: #fabd2f;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.account input {
+    width: 20%;
+}
+
+.account-box {
+    border: 5px solid #fabd2f;
+    border-radius: 30px;
+    padding-top: 0%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 0%;
+    box-shadow: 0px 0px 30px #d79921;
+}
+
+.watchlist-outside {
+    border: 5px solid #fabd2f;
+    border-radius: 30px;
+    padding-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-bottom: 2%;
+    box-shadow: 0px 0px 30px #d79921;
+}
+
+.watchlist-outside h2 {
+    text-align: center;
+    color: #fabd2f;
+}
+
+.watchlist-outside h3 {
+    text-align: center;
+    color: #b57614;
+}
+
+.watchlist-button {
+    text-align: center;
+}
+
+.watchlist-button button {
+    color: #fabd2f;
+    background-color: #3c3836;
+    border: none;
+}
+
+.watchlist-button button:hover {
+    color: #cc241d;
+    transition: 0.3s;
+}
+
+.watchlist-button button:not(:hover) {
+    transition: 0.3s;
+}
+
+.watchlist-outside h2:hover {
+    text-shadow: 0px 0px 7px #fabd2f;
+    transition: 0.3s;
+}
+
+.watchlist-outside h2:not(:hover) {
     transition: 0.3s;
 }
