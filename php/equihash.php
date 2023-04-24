@@ -10,17 +10,19 @@ if (isset($_POST['submitAion']))
 {
     $sql = "SELECT * FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = '1'";
     $exist = mysqli_query($conn, $sql);
-    $delete = "DELETE FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = '1'";
-    $add = "INSERT INTO `watchlist` (`uname`, `watchlist_id`) VALUES ('$dbname', '1')";
-
+    
     if (mysqli_num_rows($exist) > 0)
     {
+        $delete = "DELETE FROM `watchlist` WHERE uname = '$dbname' AND watchlist_id = '1'";
+        
         mysqli_query($conn, $delete);
         header("Location: ../index.php");
     }
     
     else
     {
+        $add = "INSERT INTO `watchlist` (`uname`, `watchlist_id`) VALUES ('$dbname', '1')";
+        
         mysqli_query($conn, $add);
         header("Location: ../index.php");
     }

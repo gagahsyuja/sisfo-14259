@@ -13,16 +13,6 @@
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
     </head>
     <body>
-        <!-- <div class="topbar">
-            <div class="topbar-title">
-                <h1 class="topbar-title"><a href="./index.php">Cryptopow</a></h1>
-            </div>
-            <div class="topbar-menu">
-                <a href="./index.php">Home</a>
-                <a href="./help.php#top">Help</a>
-                <a href="./about.html">About</a>
-            </div>
-        </div> -->
         <?php include './php/topbar.php'; ?>
         <br><br><br>
         <!-- <img src="./img/banner.png" alt="banner" width=100%> -->
@@ -54,6 +44,7 @@
 			<div class="recommend-outside" id="popup-1">
 				<div class="recommend" id="popup">
 					<?php include './php/help.php'; ?>
+                    <?php include './php/logout.php'; ?>
 				</div>
 			</div>
             <br><br>
@@ -80,6 +71,7 @@
             {
                 popup.style.display = 'none';
 				popup1.style.display = 'none';
+                window.location = './help.php';
             }
 
         </script>
