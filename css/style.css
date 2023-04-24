@@ -27,7 +27,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 85px;
 }
 
@@ -35,13 +35,15 @@ header {
     z-index: 1;
     top: 0;
     position: sticky;
-    display: flex;
+    /* display: flex; */
     overflow: hidden;
-    justify-content: flex-end;
+    /* justify-content: space-evenly; */
     align-items: center;
-    padding: 0px 5%;
+    /* padding: 0px 0%; */
     background-color: #d79921;
     box-shadow: 0px 0px 18px#3c3836;
+    /* text-align: center; */
+    height: 100px;
 }
 
 header ul {
@@ -57,13 +59,31 @@ header li a {
     color: #3c3836;
     font-size: large;
     /* padding: 18px 8px; */
-    padding-left: 18px;
+    /* padding-left: 18px;
     padding-right: 18px;
     padding-top: 7px;
     padding-bottom: 7px;
-    border-radius: 10px;
+    border-radius: 10px; */
 }
 
+.topbar-link {
+    /* padding-top: 1.9%; */
+    text-align: center;
+    transform: translateY(150%);
+    padding-right: 190px;
+    /* text-align: center; */
+    /* padding-left: 42%; */
+    /* padding-right: 15%; */
+    /* padding-top: 2%; */
+}
+
+.topbar-link a {
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 10px;
+}
 
 .topbar-link a:hover {
     background-color: #b57614;
@@ -75,12 +95,19 @@ header li a {
 }
 
 .topbar-title {
-    margin-right: auto;
+    /* margin-right: auto; */
+    /* margin-right: 30px;
+    margin-left: 5%; */
+    /* margin-left: 5%; */
+    /* text-align: left; */
+    transform: translate(50%,50%);
+    /* margin-left: 5%; */
+    float: left;
     color: #3c3836;
 }
 
 .topbar-title h1 {
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     color: #3c3836;
 }
 
@@ -93,7 +120,17 @@ header li a {
     transition: 0.3s;
 }
 
-header button {
+.topbar-account {
+    float: right;
+    transform: translateY(25%);
+    padding-right: 90px;
+}
+
+.topbar-account button {
+    /* margin-left: 10px; */
+    /* float: right; */
+    font-size: large;
+    color: #3c3836;
     padding-left: 18px;
     padding-right: 18px;
     padding-top: 8px;
@@ -104,20 +141,13 @@ header button {
     cursor: pointer;
 }
 
-header button:hover {
-    /* background-color: #d79921; */
+.topbar-account button:hover {
     box-shadow: 0px 0px 7px #282828;
     transition: 0.3s;
 }
 
-header button:not(:hover) {
+.topbar-account button:not(:hover) {
     transition: 0.3s;
-}
-
-.topbar-account button {
-    margin-left: 10px;
-    font-size: large;
-    color: #3c3836;
 }
 
 #topbar-logout button:hover {

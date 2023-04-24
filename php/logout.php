@@ -10,4 +10,9 @@ if (isset($_POST['logout']))
     echo '<button onclick="closePopup()" class="close">Close</button>';
 }
 
+if (isset($_POST['user']))
+{
+    header("Location: ./account.php");
+}
+
 ?>
