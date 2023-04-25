@@ -5,7 +5,6 @@ include_once './conn.php';
 
 $dbname = $_SESSION['uname'];
 
-
 // function getAlgo()
 
 $sql = "SELECT DISTINCT `coin_algo` FROM `coin`";
@@ -13,14 +12,40 @@ $result = mysqli_query($conn, $sql);
 
 while ($row = mysqli_fetch_assoc($result))
 {
-    $algo[] = $row;
+    $getAlgo[] = $row;
 }
+
+// Navbar //
+
+echo
+'
+    <div class="navbar">
+        <div class="navbar-menu">
+';
+
+foreach ($getAlgo as $i)
+{
+    $algo = $i['coin_algo'];
+
+    echo
+    '
+            <a href="#' . $algo . '">' . ucwords($algo) . '</a>
+    ';            
+}
+
+echo
+'
+        </div>
+    </div>
+';
+
+// End Navbar
 
 $contents = TRUE;
 
-foreach ($algo as $i)
+foreach ($getAlgo as $algo)
 {
-    $algo = $i['coin_algo'];
+    $algo = $algo['coin_algo'];
 
     if ($contents)
     {
@@ -52,9 +77,14 @@ foreach ($algo as $i)
     $sql = "SELECT * FROM `coin` WHERE `coin_algo` = '$algo'";
     $result = mysqli_query($conn, $sql);
 
-    while ($j = mysqli_fetch_assoc($result))
+    while ($row = mysqli_fetch_assoc($result))
     {
-        $name = $j['coin_name'];
+        $getCoin[] = $row;
+    }
+
+    foreach ($getCoin as $coin)
+    {
+        $name = $coin['coin_name'];
 
         echo
         '
@@ -68,14 +98,11 @@ foreach ($algo as $i)
             <tr class="table-logo">
     ';
 
-    $sql = "SELECT * FROM `coin` WHERE `coin_algo` = '$algo'";
-    $result = mysqli_query($conn, $sql);
-
-    while ($k = mysqli_fetch_assoc($result))
+    foreach ($getCoin as $coin)
     {
-        $name = $k['coin_name'];
-        $logo = $k['coin_image'];
-        $short = $k['coin_short_name'];
+        $name = $coin['coin_name'];
+        $logo = $coin['coin_image'];
+        $short = $coin['coin_short_name'];
         
         echo
         '
@@ -90,24 +117,17 @@ foreach ($algo as $i)
                 <form action="./php/' . $algo . '.php" method="post">
     ';
 
-    $sql = "SELECT * FROM `coin` WHERE `coin_algo` = '$algo'";
-    $result = mysqli_query($conn, $sql);
-
-    while ($row = mysqli_fetch_assoc($result))
+    foreach ($getCoin as $coin)
     {
-        $coin[] = $row;
-    }
-
-    foreach ($coin as $l)
-    {
-        $short = $l['coin_short_name'];
+        $short = $coin['coin_short_name'];
 
         $sql = "SELECT `watchlist`.*, `coin`.`coin_id`, `coin`.`coin_short_name`
                 FROM `watchlist`
                 INNER JOIN `coin`
                 ON `watchlist`.`watchlist_id` = `coin`.`coin_id`
                 WHERE `uname` = '$dbname'
-                AND `coin_short_name` = '$short'";
+                AND `coin_short_name` = '$short'
+                ";
 
         $result = mysqli_query($conn, $sql);
 
@@ -128,20 +148,20 @@ foreach ($algo as $i)
         }
     }
 
-    unset($coin);
-
     echo
     '
                 </form>
             </tr>
         </table>
-        ';
+    ';
         
-        $contents = FALSE;
-    }
+    $contents = FALSE;
+    unset($getCoin);
+}
 
 echo
 '
     </div>
 ';
+
 ?>
