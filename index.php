@@ -18,13 +18,6 @@
             </div>
         </div>
         <img src="./img/banner.png" alt="banner" width="100%">
-        <div class="navbar">
-            <div class="navbar-menu">
-                <a href="#equihash">Equihash</a>
-                <a href="#ethash">Ethash</a>
-                <a href="#kawpow">KawPow</a>
-            </div>
-        </div>
         <?php include './php/index.php'; ?>
     <br><br><br><br>
     <div class="botbar">
