@@ -890,15 +890,18 @@ button[type=submit]:not(:hover) {
 
 .watchlist-outside h2 {
     text-align: center;
+    padding-left: 20%;
     color: #fabd2f;
 }
 
 .watchlist-outside h3 {
     text-align: center;
+    padding-left: 50%;
     color: #b57614;
 }
 
 .watchlist-button {
+    transform: translateX(15%);
     text-align: center;
 }
 
@@ -924,4 +927,15 @@ button[type=submit]:not(:hover) {
 
 .watchlist-outside h2:not(:hover) {
     transition: 0.3s;
+}
+
+.watchlist-outside-image {
+    padding-left: 0px;
+}
+
+.watchlist-image {
+    background-color: #b57614;
+    border-radius: 10%;
+    padding: 3%;
+    border: 5px solid #fabd2f;
 }

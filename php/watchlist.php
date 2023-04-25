@@ -109,8 +109,8 @@ function getWatchlist()
         <div class="watchlist-outside">
             <table>
                 <tr>
-                    <td>
-                        <img src="' . $logo . '" width="50%" alt="">
+                    <td class="watchlist-outside-image">
+                        <img class="watchlist-image" src="' . $logo . '" width="50%" alt="">
                     </td>
                     <td>
                         <a href="./coins/' . $short . '.php" target="_blank"><h2>' . $name . '</h2></a>
