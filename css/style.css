@@ -325,7 +325,7 @@ table {
     height: 180px;
     border: 1px solid transparent;
     border-radius: 15px;
-    box-shadow: 0px 0px 18px #282828;
+    /* box-shadow: 0px 0px 18px #282828; */
 }
 
 .table-logo td {
@@ -802,7 +802,7 @@ button[type=submit]:not(:hover) {
     background-color: #d79921;
     height: 50px;
     border: 1px solid transparent;
-    box-shadow: 0px 0px 18px #282828;
+    /* box-shadow: 0px 0px 18px #282828; */
 }
 
 .wish-box button {
@@ -886,6 +886,8 @@ button[type=submit]:not(:hover) {
     margin-right: 20%;
     padding-bottom: 2%;
     box-shadow: 0px 0px 30px #d79921;
+    /* background-color: rgba(181, 118, 20, 0.1); */
+    /* background-color: #3c3836; */
 }
 
 .watchlist-outside h2 {
@@ -934,8 +936,8 @@ button[type=submit]:not(:hover) {
 }
 
 .watchlist-image {
-    background-color: #b57614;
-    border-radius: 10%;
+    background-color: rgba(181, 118, 20, 0.5);
+    border-radius: 35%;
     padding: 3%;
-    border: 5px solid #fabd2f;
+    /* border: 5px solid #fabd2f; */
 }
