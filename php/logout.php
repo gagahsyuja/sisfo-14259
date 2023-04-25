@@ -15,4 +15,9 @@ if (isset($_POST['user']))
     header("Location: ./account.php");
 }
 
+if (isset($_POST['coin']))
+{
+    header("Location: ../account.php");
+}
+
 ?>

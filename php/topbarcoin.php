@@ -11,13 +11,13 @@ if (isset($_SESSION['uname']))
 
 function user($isLogged)
 {
-    $notLogged = '<a class="topbar-account" href="../login.php"><button><i class="fa-solid fa-user-large"></i></button></a>';
+    $notLogged = '<a href="../login.php"><button><i class="fa-solid fa-user-large"></i></button></a>';
 
-    $logged = 
-    '<a class="topbar-account" href="../account.php"><button><i class="fa-solid fa-user-large"></i> ' . $_SESSION["uname"] . '</button></a>
+    $logged = '
 
     <form action="" method="post">
-        <a class="topbar-account" id="topbar-logout" href="#"><button name="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
+        <a href="#"><button name="coin"><i class="fa-solid fa-user-large"></i> ' . $_SESSION["uname"] . '</button></a>
+        <a id="topbar-logout" href="#"><button name="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
     </form>
     ';
 
@@ -46,10 +46,10 @@ echo '
             <li><a href="../watchlist.php#top">Watchlist</a></li>
             <li><a href="../help.php#top">Help</a></li>
         </ul>
-    </nav>' .
-    
-    user($isLogged) .
-
-'</header>';
+    </nav>
+    <ul class="topbar-account">
+        <li>' . user($isLogged) . '</li>
+    </ul>
+</header>';
 
 ?>
