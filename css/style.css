@@ -941,3 +941,13 @@ button[type=submit]:not(:hover) {
     padding: 3%;
     /* border: 5px solid #fabd2f; */
 }
+
+.button-home {
+    border: 10px solid #d79921;
+    background-color: #d79921;
+}
+
+.button-home:hover {
+    background-color: #b57614;
+    border: 10px solid #b57614;
+}

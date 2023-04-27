@@ -143,7 +143,9 @@ foreach ($getAlgo as $algo)
             
             echo
             '
-                    <td><a href="./coins/' . $short . '.php"><img src="' . $logo . '" alt="image of ' . $name . '" width="18%"></a></td>
+                    <form method="post" action="./php/coin.php">
+                        <td><a href="#"><button class="button-home" name="' . $short . '"><img src="' . $logo . '" alt="image of ' . $name . '" width="18%"></button></a></td>
+                    </form>
             ';
         }
     
