@@ -21,11 +21,11 @@ function isEmpty()
     }
 }
 
-function getName(int $fav)
+function getName($fav)
 {
     include './conn.php';
 
-    $sql = "SELECT * FROM `coin` WHERE coin_id = $fav";
+    $sql = "SELECT * FROM `coin` WHERE `coin_short_name` = '$fav'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     $name = $row['coin_name'];
@@ -33,11 +33,11 @@ function getName(int $fav)
     return $name;
 }
 
-function getLogo(int $fav)
+function getLogo($fav)
 {
     include './conn.php';
 
-    $sql = "SELECT * FROM `coin` WHERE coin_id = $fav";
+    $sql = "SELECT * FROM `coin` WHERE `coin_short_name` = '$fav'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     $logo = $row['coin_image'];
@@ -45,11 +45,11 @@ function getLogo(int $fav)
     return $logo;
 }
 
-function getShort(int $fav)
+function getShort($fav)
 {
     include './conn.php';
 
-    $sql = "SELECT * FROM `coin` WHERE coin_id = $fav";
+    $sql = "SELECT * FROM `coin` WHERE `coin_short_name` = '$fav'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     $short = $row['coin_short_name'];
@@ -57,11 +57,11 @@ function getShort(int $fav)
     return $short;
 }
 
-function getPrice(int $fav)
+function getPrice($fav)
 {
     include './conn.php';
 
-    $sql = "SELECT * FROM `coin` WHERE coin_id = $fav";
+    $sql = "SELECT * FROM `coin` WHERE `coin_short_name` = '$fav'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     $price = $row['coin_price'];
@@ -69,19 +69,29 @@ function getPrice(int $fav)
     return $price;
 }
 
-function getRemove(int $fav)
-{   
-    include_once "./conn.php";
-    $del = array("aionX", "btgX", "fluxX", "etcX", "ethwX", "zilX", "neoxX", "rvnX", "arlX");
+function getRemove()
+{
+    session_start();
+    include './conn.php';
+
     $dbname = $_SESSION['uname'];
 
-    $sql = "DELETE FROM `watchlist` WHERE uname = $dbname AND watchlist_id = $fav";
+    $sql = "SELECT * FROM `watchlist` WHERE `uname` = '$dbname'";
+    $result = mysqli_query($conn, $sql);
 
-    if (isset($_POST[$del[$fav - 1]]))
+    while ($row = mysqli_fetch_assoc($result))
     {
-        if (mysqli_query($conn, $sql))
+        $short = $row['coin_short_name'];
+        $remove = 'remove' . ucfirst($short);
+
+        if (isset($_POST[$remove]))
         {
-            header("Location: ./watchlist.php");
+            $sql = "DELETE FROM `watchlist` WHERE `uname` = '$dbname' AND `coin_short_name` = '$short'";
+
+            if (mysqli_query($conn, $sql))
+            {
+                header("Location: ./watchlist.php");
+            }
         }
     }
 }
@@ -98,11 +108,11 @@ function getWatchlist()
 
     while ($row = mysqli_fetch_assoc($result))
     {
-        $id = $row['watchlist_id'];
-        $name = getName($id);
-        $logo = getLogo($id);
-        $short = getShort($id);
-        $price = getPrice($id);
+        $fav = $row['coin_short_name'];
+        $name = getName($fav);
+        $logo = getLogo($fav);
+        $short = getShort($fav);
+        $price = getPrice($fav);
 
         echo '
 
@@ -120,8 +130,8 @@ function getWatchlist()
                     </td>
                     <td>
                         <div class="watchlist-button">
-                            <form action="./watch/' . $short . 'X.php" method="post">
-                                <button name="submit"><i class="fa-solid fa-trash fa-2x"></i></button>
+                            <form action="./php/remove.php" method="post">
+                                <button name="remove' . ucfirst($short) . '"><i class="fa-solid fa-trash fa-2x"></i></button>
                             </form>
                         </div>
                     </td>
@@ -148,11 +158,11 @@ function getScript()
 
     while ($row = mysqli_fetch_assoc($result))
     {
-        $id = $row['watchlist_id'];
-        $name = getName($id);
-        $logo = getLogo($id);
-        $short = getShort($id);
-        $price = getPrice($id);
+        $fav = $row['coin_short_name'];
+        $name = getName($fav);
+        $logo = getLogo($fav);
+        $short = getShort($fav);
+        $price = getPrice($fav);
 
         echo '
 
@@ -186,6 +196,7 @@ if (isset($_SESSION['uname']))
     {
         getWatchlist();
         getScript();
+        // getRemove();
     }
     
     else
@@ -198,6 +209,5 @@ else
 {
     echo '<h2>You have to be logged in in order to use this feature</h2>';
 }
-
 
 ?>

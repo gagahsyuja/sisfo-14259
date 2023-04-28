@@ -346,22 +346,6 @@ table {
     transition: 0.3s;
 } */
 
-.table-logo a:hover {
-    background-color: #b57614;
-    transition: 0.3s;
-    border-radius: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 28px;
-    margin-right: 28px;
-}
-
-.table-logo a:not(:hover) {
-    transition: 0.3s;
-}
-
 .table-coin-name {
     color: #fabd2f;
 }
@@ -945,9 +929,21 @@ button[type=submit]:not(:hover) {
 .button-home {
     border: 10px solid #d79921;
     background-color: #d79921;
+    border-radius: 20px;
 }
 
 .button-home:hover {
     background-color: #b57614;
-    border: 10px solid #b57614;
+    transition: 0.3s;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 28px;
+    margin-right: 28px;
+}
+
+.button-home:not(:hover)
+{
+    transition: 0.3s;
 }

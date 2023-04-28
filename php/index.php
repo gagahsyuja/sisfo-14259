@@ -116,7 +116,7 @@ foreach ($getAlgo as $algo)
         }
         
         // Filling up the rest of the table
-        // if the coin amount modulus by 3 is not equal to 0
+        // if the amount of coin modulus by 3 is not equal to 0
 
         for ($x = 0; $x < $notEven; $x++)
         {
@@ -144,7 +144,7 @@ foreach ($getAlgo as $algo)
             echo
             '
                     <form method="post" action="./php/coin.php">
-                        <td><a href="#"><button class="button-home" name="' . $short . '"><img src="' . $logo . '" alt="image of ' . $name . '" width="18%"></button></a></td>
+                        <td><button class="button-home" name="' . $short . '"><img src="' . $logo . '" alt="image of ' . $name . '" width="18%"></button></td>
                     </form>
             ';
         }
@@ -153,17 +153,15 @@ foreach ($getAlgo as $algo)
         '
                 </tr>
                 <tr class="wish-box">
-                    <form action="./php/' . $algo . '.php" method="post">
+                    <form action="./php/submit.php" method="post">
         ';
     
         for ($l = $init; $l < $count AND $l < $amount; $l++)
         {
             $short = $coin[$l]['coin_short_name'];
     
-            $sql = "SELECT `watchlist`.*, `coin`.`coin_id`, `coin`.`coin_short_name`
+            $sql = "SELECT *
                     FROM `watchlist`
-                    INNER JOIN `coin`
-                    ON `watchlist`.`watchlist_id` = `coin`.`coin_id`
                     WHERE `uname` = '$dbname'
                     AND `coin_short_name` = '$short'
                     ";
@@ -210,6 +208,7 @@ foreach ($getAlgo as $algo)
 
 echo
 '
+        <br>
     </div>
 ';
 
