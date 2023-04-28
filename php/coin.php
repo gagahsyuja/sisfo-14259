@@ -31,6 +31,28 @@ function getAlgo($name)
     return $algos;
 }
 
+function getPool($name)
+{
+    include '../conn.php';
+
+    $sql = "SELECT `coin`.*, `coin-pool`.*, `pool`.*
+            FROM `coin`
+            INNER JOIN `coin-pool`
+            ON `coin`.`coin_short_name` = `coin-pool`.`coin_short_name`
+            INNER JOIN `pool`
+            ON `coin-pool`.`pool_short_name` = `pool`.`pool_short_name`
+            WHERE `coin`.`coin_short_name` = '$name'";
+
+    $result = mysqli_query($conn, $sql);
+
+    while ($row = mysqli_fetch_assoc($result))
+    {
+        $pools[] = $row;
+    }
+
+    return $pools;
+}
+
 function getMiner($name)
 {
     include '../conn.php';
@@ -136,10 +158,20 @@ foreach ($coins as $coin)
                         </tr>
                         <tr>
                             <td class="details-link-title"><h3>Pools</h3></td>
-                            <td class="details-link">
-                                <a href="https://aionpool.tech" target="_blank">Aion Pool</a>
-                                <a href="https://woolypooly.com/en/coin/aion" target="_blank">WoolyPooly</a>
-                                <a href="https://aionmine.org" target="_blank">AIONMINE</a>
+                            <td class="details-link">';
+
+                            foreach (getPool($short) as $pool)
+                            {
+                                $site = $pool['pool_site'];
+                                $name = $pool['pool_name'];
+
+                                echo
+                                '
+                                <a href="' . $site . '" target="_blank">' . $name . '</a>
+                                ';
+                            }
+            echo
+            '
                             </td>
                         </tr>
                         <tr>
