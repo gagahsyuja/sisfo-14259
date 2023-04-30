@@ -22,8 +22,6 @@
         </div>
         <div class="about-watchlist">
             <br><br>
-            <h1><strong>Watchlist</strong></h1>
-            <br><br>
 
             <?php include './php/watchlist.php'; ?>
 

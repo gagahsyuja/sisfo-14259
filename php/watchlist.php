@@ -114,8 +114,8 @@ function getWatchlist()
         $short = getShort($fav);
         $price = getPrice($fav);
 
-        echo '
-
+        echo 
+        '
         <div class="watchlist-outside">
             <table>
                 <tr>
@@ -194,6 +194,11 @@ if (isset($_SESSION['uname']))
 {
     if (isEmpty() == FALSE)
     {
+        echo
+        '
+        <h1><strong>Watchlist</strong></h1>
+        <br><br>
+        ';
         getWatchlist();
         getScript();
         // getRemove();
@@ -201,13 +206,17 @@ if (isset($_SESSION['uname']))
     
     else
     {
-        echo '<h1>Empty</h1>';
+        echo
+        '
+        <h1>Watchlist is Empty</h1>
+        <h1>Add coin to watchlist using the <i class="fa-regular fa-eye"></i> button</h1>
+        ';
     }
 }
 
 else
 {
-    echo '<h2>You have to be logged in in order to use this feature</h2>';
+    echo '<h1>You have to be logged in in order to use this feature</h1>';
 }
 
 ?>
