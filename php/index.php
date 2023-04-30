@@ -80,6 +80,7 @@ foreach ($getAlgo as $algo)
     
     $loop = 0;
     $even = 3;
+    
     for (; $even < $amount; $even += 3)
     {
         if ($even < $amount)
