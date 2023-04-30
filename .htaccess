@@ -1,0 +1,3 @@
+RewriteEngine on
+
+RewriteRule ^coin/([^/\.]+).php    php/coin.php?coin=$1 [NC]
