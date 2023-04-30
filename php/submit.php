@@ -14,12 +14,10 @@ while ($row = mysqli_fetch_assoc($result))
     $shorts[] = $row;
 }
 
-$i = 1;
-
 foreach ($shorts as $short)
 {
-    $name = 'submit' . ucfirst($short['coin_short_name']);
     $shortName = $short['coin_short_name'];
+    $name = 'submit' . ucfirst($shortName);
 
     if (isset($_POST[$name]))
     {
@@ -44,8 +42,6 @@ foreach ($shorts as $short)
             echo '<script>window.location = "../index.php"</script>';
         }
     }
-
-    $i++;
 }
 
 ?>
