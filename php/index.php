@@ -80,7 +80,7 @@ foreach ($getAlgo as $algo)
     
     $loop = 0;
     $even = 3;
-    
+
     for (; $even < $amount; $even += 3)
     {
         if ($even < $amount)
@@ -173,7 +173,7 @@ foreach ($getAlgo as $algo)
             {
                 echo
                 '
-                        <td><button type="submit" name="submit' . ucfirst($short) . '"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
+                        <td><button type="submit" name="submitIndex" value="' . $short . '"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
                 ';
             }
     
@@ -181,7 +181,7 @@ foreach ($getAlgo as $algo)
             {
                 echo
                 '
-                        <td><button type="submit" name="submit' . ucfirst($short) . '"><i class="fa-regular fa-eye fa-2x"></i></button></td>
+                        <td><button type="submit" name="submitIndex" value="' . $short . '"><i class="fa-regular fa-eye fa-2x"></i></button></td>
                 ';
             }
         }

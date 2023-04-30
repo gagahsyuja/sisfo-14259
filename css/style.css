@@ -362,6 +362,14 @@ table h3 {
     color: #d79921;
 }
 
+.title-button
+{
+    /* float: left; */
+    text-align: center;
+    transform: translateY(50%);
+    /* transform: translate(18%, 500%); */
+}
+
 .image {
     background-color: #b57614;
     margin-left: 9%;

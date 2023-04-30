@@ -126,6 +126,27 @@ function getPrice($name)
     return $price;
 }
 
+function isWatch($name)
+{
+    include '../conn.php';
+    session_start();
+
+    $dbname = $_SESSION['uname'];
+
+    $sql = "SELECT * FROM `watchlist` WHERE `coin_short_name` = '$name' AND `uname` = '$dbname'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0)
+    {
+        return TRUE;
+    }
+
+    else
+    {
+        return FALSE;
+    }
+}
+
 if (isset($_GET['coin']))
 {
     $short = $_GET['coin'];
@@ -165,14 +186,28 @@ if (isset($_GET['coin']))
             <div class="box">
                 <br><br>
                 <h3 class="title">' . $name . '<br>(' . strtoupper($short) . ')</h3>
-                <h3 class="title">
-                    <form action="../watch/aion.php" method="post">
-                        <?php
+                <h3 class="title-button">
+                    <form action="./submit.php" method="post">
+        ';
+        
+        if (isWatch($short))
+        {
+            echo
+            '
+                        <button type="submit" name="submitCoin" value="' . $short . '"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button>
+            ';
+        }
 
-                        $id = 1;
-                        include "../php/icon.php";
-                        
-                        ?>
+        else
+        {
+            echo
+            '
+                        <button type="submit" name="submitCoin" value="' . $short . '"><i class="fa-regular fa-eye fa-2x"></i></button>
+            ';
+        }
+
+        echo
+        '
                     </form>
                 </h3>
                 <img class="image" src="' . $logo . '" alt="image of ' . $name . '" width="18%">

@@ -6,41 +6,59 @@ include_once '../conn.php';
 
 $dbname = $_SESSION['uname'];
 
-$sql = "SELECT `coin_short_name` FROM `coin`";
-$result = mysqli_query($conn, $sql);
-
-while ($row = mysqli_fetch_assoc($result))
+if (isset($_POST['submitIndex']))
 {
-    $shorts[] = $row;
+    $short = $_POST['submitIndex'];
+
+    $sql = "SELECT * FROM `watchlist` WHERE `uname` = '$dbname' AND `coin_short_name` = '$short'";
+    $exist = mysqli_query($conn, $sql);
+    
+    if (mysqli_num_rows($exist) > 0)
+    {
+        $delete = "DELETE FROM `watchlist` WHERE `uname` = '$dbname' AND `coin_short_name` = '$short'";
+        
+        mysqli_query($conn, $delete);
+        // header("Location: ../index.php");
+
+        echo '<script>window.location = "../index.php"</script>';
+    }
+    
+    else
+    {
+        $add = "INSERT INTO `watchlist` (`uname`, `coin_short_name`) VALUES ('$dbname', '$short')";
+        
+        mysqli_query($conn, $add);
+        // header("Location: ../index.php");
+
+        echo '<script>window.location = "../index.php"</script>';
+    }
 }
 
-foreach ($shorts as $short)
+if (isset($_POST['submitCoin']))
 {
-    $shortName = $short['coin_short_name'];
-    $name = 'submit' . ucfirst($shortName);
+    $short = $_POST['submitCoin'];
 
-    if (isset($_POST[$name]))
+    $sql = "SELECT * FROM `watchlist` WHERE `uname` = '$dbname' AND `coin_short_name` = '$short'";
+    $exist = mysqli_query($conn, $sql);
+    
+    if (mysqli_num_rows($exist) > 0)
     {
-        $sql = "SELECT * FROM `watchlist` WHERE `uname` = '$dbname' AND `coin_short_name` = '$shortName'";
-        $exist = mysqli_query($conn, $sql);
+        $delete = "DELETE FROM `watchlist` WHERE `uname` = '$dbname' AND `coin_short_name` = '$short'";
         
-        if (mysqli_num_rows($exist) > 0)
-        {
-            $delete = "DELETE FROM `watchlist` WHERE `uname` = '$dbname' AND `coin_short_name` = '$shortName'";
-            
-            mysqli_query($conn, $delete);
-            // header("Location: ../index.php");
-            echo '<script>window.location = "../index.php"</script>';
-        }
+        mysqli_query($conn, $delete);
+        // header("Location: ../index.php");
+
+        echo '<script>window.location = "./coin.php?coin=' . $short . '"</script>';
+    }
+    
+    else
+    {
+        $add = "INSERT INTO `watchlist` (`uname`, `coin_short_name`) VALUES ('$dbname', '$short')";
         
-        else
-        {
-            $add = "INSERT INTO `watchlist` (`uname`, `coin_short_name`) VALUES ('$dbname', '$shortName')";
-            
-            mysqli_query($conn, $add);
-            // header("Location: ../index.php");
-            echo '<script>window.location = "../index.php"</script>';
-        }
+        mysqli_query($conn, $add);
+        // header("Location: ../index.php");
+
+        echo '<script>window.location = "./coin.php?coin=' . $short . '"</script>';
     }
 }
 
