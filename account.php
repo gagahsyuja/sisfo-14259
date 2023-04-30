@@ -42,6 +42,8 @@
                 <div class="account">
                     <br><br>
                     <form action="" method="post">
+                        <label for="passwd">Current Password</label><br>
+                        <input type="password" name="current"><br><br>
                         <label for="passwd">Password</label><br>
                         <input type="password" name="passwd"><br><br>
                         <label for="confirm">Confirm Password</label><br>
