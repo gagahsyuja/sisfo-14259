@@ -57,36 +57,6 @@ function getShort($fav)
     return $short;
 }
 
-function getPrice($fav)
-{
-    $fav .= 'idr';
-    $url = 'https://indodax.com/api/ticker/' . $fav;
-
-    $json = file_get_contents($url);
-    $json = json_decode($json);
-
-    $price = $json -> ticker -> last;
-
-    return $price;
-}
-
-function getPercentage($fav)
-{
-    $today = getPrice($fav);
-    $url = 'https://indodax.com/api/summaries/';
-
-    $json = file_get_contents($url);
-    $json = json_decode($json);
-
-    $fav .= 'idr';
-    $yesterday = $json -> prices_24h -> $fav;
-
-    $percentage = $today * 100 / $yesterday;
-    $percentage = number_format($percentage, 2);
-
-    return $percentage;
-}
-
 function getRemove()
 {
     session_start();
@@ -130,8 +100,6 @@ function getWatchlist()
         $name = getName($fav);
         $logo = getLogo($fav);
         $short = getShort($fav);
-        $price = getPrice($fav);
-        // $percentage = getPercentage($fav);
 
         echo 
         '
@@ -145,7 +113,7 @@ function getWatchlist()
                         <a href="./php/coin.php?coin=' . $short . '" target="_blank"><h2>' . $name . '</h2></a>
                     </td>
                     <td>
-                        <h3>Rp' . $price . '<br><span id="' . $short . '"></span></h3>
+                        <h3>Rp<span id="' . $short . 'Price"></span><br><span id="' . $short . 'Percent"></span></h3>
                     <td>
                         <div class="watchlist-button">
                             <form action="./php/remove.php" method="post">
@@ -185,7 +153,8 @@ function getScript()
 
         echo
         '
-            var ' . $short . ' = document.getElementById("' . $short . '");
+            var ' . $short . 'Percent = document.getElementById("' . $short . 'Percent");
+            var ' . $short . 'Price = document.getElementById("' . $short . 'Price");
         ';
     }
 
@@ -211,25 +180,21 @@ function getScript()
                 var last = response.tickers.' . $short . '_idr.last;
                 var yest = response.prices_24h.' . $short . 'idr;
                 var percent = last * 100 / yest;
+
+                ' . $short . 'Price.innerHTML = last;
             
-                if (percent == 100)
+                if (percent > 100)
                 {
                     percent -= 100;
                     
-                    ' . $short . '.innerHTML = "<span style=\'color: #b8bb26;\'><i class=\'fa-solid fa-caret-up\'></i> " + percent.toFixed(2) + "%</span>";
-                }
-                else if (percent > 100)
-                {
-                    percent -= 100;
-                    
-                    ' . $short . '.innerHTML = "<span style=\'color: #b8bb26;\'><i class=\'fa-solid fa-caret-up\'></i> " + percent.toFixed(2) + "%</span>";
+                    ' . $short . 'Percent.innerHTML = "<span style=\'color: #b8bb26;\'><i class=\'fa-solid fa-caret-up\'></i> " + percent.toFixed(2) + "%</span>";
                 }
             
                 else
                 {
                     percent = 100 - percent;
 
-                    ' . $short . '.innerHTML = "<span style=\'color: #fb4934;\'><i class=\'fa-solid fa-caret-down\'></i> " + percent.toFixed(2) + "%</span>";
+                    ' . $short . 'Percent.innerHTML = "<span style=\'color: #fb4934;\'><i class=\'fa-solid fa-caret-down\'></i> " + percent.toFixed(2) + "%</span>";
                 }
             
             })
