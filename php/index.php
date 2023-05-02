@@ -154,41 +154,22 @@ foreach ($getAlgo as $algo)
         '
                 </tr>
                 <tr class="wish-box">
-                    <form action="./php/submit.php" method="post">
+                <form class="submitForm">
         ';
-    
+
         for ($l = $init; $l < $count AND $l < $amount; $l++)
         {
             $short = $coin[$l]['coin_short_name'];
-    
-            $sql = "SELECT *
-                    FROM `watchlist`
-                    WHERE `uname` = '$dbname'
-                    AND `coin_short_name` = '$short'
-                    ";
-    
-            $result = mysqli_query($conn, $sql);
-    
-            if (mysqli_num_rows($result) > 0)
-            {
-                echo
-                '
-                        <td><button type="submit" name="submitIndex" value="' . $short . '"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button></td>
-                ';
-            }
-    
-            else
-            {
-                echo
-                '
-                        <td><button type="submit" name="submitIndex" value="' . $short . '"><i class="fa-regular fa-eye fa-2x"></i></button></td>
-                ';
-            }
+
+            echo
+            '
+                    <td><button type="button" id="' . $short . 'Button"><span id="' . $short . '"></span></button></td>
+            ';
         }
-        
+
         echo
         '
-                    </form>
+                </form>
                 </tr>
             </table>
         ';
@@ -211,6 +192,52 @@ echo
 '
         <br>
     </div>
+    <script>
 ';
+
+$sql = "SELECT `coin_short_name` FROM `coin`";
+$result = mysqli_query($conn, $sql);
+
+while ($row = mysqli_fetch_assoc($result))
+{
+    $short = $row['coin_short_name'];
+
+    echo
+    '
+        $(document).ready(function()
+        {
+            var short = "' . $short . '"
+            
+            $("#' . $short . '").load("./php/coin-button.php",
+            {
+                coinShort: short
+            })
+    
+            $("#' . $short . 'Button").on("click", function(event)
+            {
+                $.ajax(
+                {
+                    type: "post",
+                    url: "./php/coin-insert.php",
+                    data: $(".submitForm").serialize() + "&coin=' . $short . '",
+    
+                    success: function()
+                    {
+                        $("#' . $short . '").load("./php/coin-button.php",
+                        {
+                            coinShort: short
+                        })
+                    }
+                })
+            })
+        })
+    ';
+}
+
+echo
+'
+    </script>
+';
+
 
 ?>
