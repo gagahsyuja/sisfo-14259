@@ -27,9 +27,6 @@
         <div class="about">
             <br><br>
             <h1><strong>Hi there, <?php session_start(); echo $_SESSION['uname']; ?></strong></h1>
-            <form action="" method="post">
-                <input type="submit" value="Logout" name="logout">
-            </form>
             <div class="recommend-outside" id="popup">
                 <div class="recommend" id="popup-1">
                     <?php include './php/logout.php'; ?>
@@ -38,7 +35,15 @@
             </div>
             <!-- <p>I use linux btw</p> -->
             <br><br>
-            <div class="account-box">
+            <div class="account-button">
+                <form action="" method="post">
+                    <input type="submit" value="Logout" name="logout">
+                </form>
+                <br><br>
+                <button onclick="show()"><h3>Change Password</h3></button>
+                <br><br>
+            </div>
+            <div id="account-box">
                 <div class="account">
                     <br><br>
                     <form action="" method="post">
@@ -90,6 +95,21 @@
             {
                 popup.style.display = 'none';
 				popup1.style.display = 'none';
+            }
+
+            function show()
+            {
+                var account = document.getElementById("account-box");
+
+                if (account.style.display === "none")
+                {
+                    account.style.display = "block";
+                }
+
+                else
+                {
+                    account.style.display = "none";
+                }
             }
 
         </script>
