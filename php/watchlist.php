@@ -59,14 +59,32 @@ function getShort($fav)
 
 function getPrice($fav)
 {
-    include './conn.php';
+    $fav .= 'idr';
+    $url = 'https://indodax.com/api/ticker/' . $fav;
 
-    $sql = "SELECT * FROM `coin` WHERE `coin_short_name` = '$fav'";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-    $price = $row['coin_price'];
-    
+    $json = file_get_contents($url);
+    $json = json_decode($json);
+
+    $price = $json -> ticker -> last;
+
     return $price;
+}
+
+function getPercentage($fav)
+{
+    $today = getPrice($fav);
+    $url = 'https://indodax.com/api/summaries/';
+
+    $json = file_get_contents($url);
+    $json = json_decode($json);
+
+    $fav .= 'idr';
+    $yesterday = $json -> prices_24h -> $fav;
+
+    $percentage = $today * 100 / $yesterday;
+    $percentage = number_format($percentage, 2);
+
+    return $percentage;
 }
 
 function getRemove()
@@ -113,6 +131,7 @@ function getWatchlist()
         $logo = getLogo($fav);
         $short = getShort($fav);
         $price = getPrice($fav);
+        // $percentage = getPercentage($fav);
 
         echo 
         '
@@ -123,11 +142,10 @@ function getWatchlist()
                         <img class="watchlist-image" src="' . $logo . '" width="50%" alt="">
                     </td>
                     <td>
-                        <a href="./coins/' . $short . '.php" target="_blank"><h2>' . $name . '</h2></a>
+                        <a href="./php/coin.php?coin=' . $short . '" target="_blank"><h2>' . $name . '</h2></a>
                     </td>
                     <td>
-                        <h3>Rp<span id="'. $short . '"></span></h3>
-                    </td>
+                        <h3>Rp' . $price . '<br><span id="' . $short . '"></span></h3>
                     <td>
                         <div class="watchlist-button">
                             <form action="./php/remove.php" method="post">
@@ -158,30 +176,63 @@ function getScript()
 
     while ($row = mysqli_fetch_assoc($result))
     {
-        $fav = $row['coin_short_name'];
-        $name = getName($fav);
-        $logo = getLogo($fav);
-        $short = getShort($fav);
-        $price = getPrice($fav);
+        $coins[] = $row;
+    }
 
-        echo '
+    foreach ($coins as $coin)
+    {
+        $short = $coin['coin_short_name'];
 
+        echo
+        '
             var ' . $short . ' = document.getElementById("' . $short . '");
+        ';
+    }
 
-            var ' . $short . 'Price = {
+    echo
+    '
+            const liveprice = {
                 "async": true,
                 "scroosDomain": true,
-                "url": "' . $price . '",
+                "url": "https://indodax.com/api/summaries/",
                 "method": "GET",
                 "headers": {}
             }
-            
-            $.ajax(' . $short . 'Price).done(function (response) {
-                console.log(response);
-            
-                ' . $short . '.innerHTML = response.ticker.buy;
-            })
+    ';
 
+    foreach ($coins as $coin)
+    {
+        $short = $coin['coin_short_name'];
+
+        echo
+        '
+            $.ajax(liveprice).done(function (response) {
+            
+                var last = response.tickers.' . $short . '_idr.last;
+                var yest = response.prices_24h.' . $short . 'idr;
+                var percent = last * 100 / yest;
+            
+                if (percent == 100)
+                {
+                    percent -= 100;
+                    
+                    ' . $short . '.innerHTML = "<span style=\'color: #b8bb26;\'><i class=\'fa-solid fa-caret-up\'></i> " + percent.toFixed(2) + "%</span>";
+                }
+                else if (percent > 100)
+                {
+                    percent -= 100;
+                    
+                    ' . $short . '.innerHTML = "<span style=\'color: #b8bb26;\'><i class=\'fa-solid fa-caret-up\'></i> " + percent.toFixed(2) + "%</span>";
+                }
+            
+                else
+                {
+                    percent = 100 - percent;
+
+                    ' . $short . '.innerHTML = "<span style=\'color: #fb4934;\'><i class=\'fa-solid fa-caret-down\'></i> " + percent.toFixed(2) + "%</span>";
+                }
+            
+            })
         ';
     }
 
