@@ -187,27 +187,8 @@ if (isset($_GET['coin']))
                 <br><br>
                 <h3 class="title">' . $name . '<br>(' . strtoupper($short) . ')</h3>
                 <h3 class="title-button">
-                    <form action="./submit.php" method="post">
-        ';
-        
-        if (isWatch($short))
-        {
-            echo
-            '
-                        <button type="submit" name="submitCoin" value="' . $short . '"><i class="fa-sharp fa-solid fa-eye fa-2x"></i></button>
-            ';
-        }
-
-        else
-        {
-            echo
-            '
-                        <button type="submit" name="submitCoin" value="' . $short . '"><i class="fa-regular fa-eye fa-2x"></i></button>
-            ';
-        }
-
-        echo
-        '
+                    <form id="submitForm">
+                        <button type="button" id="submitButton"><span id="' . $short . '"></span></button>
                     </form>
                 </h3>
                 <img class="image" src="' . $logo . '" alt="image of ' . $name . '" width="18%">
@@ -325,6 +306,37 @@ if (isset($_GET['coin']))
                     ' . $short . 'Percent.innerHTML = "<span style=\'color: #9d0006; text-shadow: 2px 2px 5px #3c3836;\'><i class=\'fa-solid fa-caret-down\'></i> " + percent.toFixed(2) + "%</span>";
                 }
             
+            })
+
+        </script>
+        <script>
+
+            $(document).ready(function()
+            {
+                var short = "' . $short . '"
+                
+                $("#' . $short . '").load("./coin-button.php",
+                {
+                    coinShort: short
+                })
+            
+                $("#submitButton").on("click", function(event)
+                {
+                    $.ajax(
+                    {
+                        type: "post",
+                        url: "./coin-insert.php",
+                        data: $("#submitForm").serialize() + "&coin=' . $short . '",
+
+                        success: function()
+                        {
+                            $("#' . $short . '").load("./coin-button.php",
+                            {
+                                coinShort: short
+                            })
+                        }
+                    })
+                })
             })
 
         </script>
