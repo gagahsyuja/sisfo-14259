@@ -214,6 +214,13 @@ if (isset($_GET['coin']))
                 <br>
                 <table class="details">
                     <tr>
+                        <td class="details-link-title"><h3>Price</h3></td>
+                        <td class="details-link">
+                            Rp<span id="' . $short . 'Price" style="color: #3c3836"></span>
+                            <span id="' . $short . 'Percent"></span>
+                        </td>
+                    </tr>
+                    <tr>
                         <td class="details-link-title"><h3>Algorithm</h3></td>
                         <td class="details-link">
                             <a href="' . $algoAbout . '" target="_blank">' . ucwords($algo) . '</a>
@@ -254,13 +261,6 @@ if (isset($_GET['coin']))
                         }
         echo
         '
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="details-link-title"><h3>Price</h3></td>
-                        <td class="details-link">
-                            Rp<span id="' . $short . 'Price" style="color: #3c3836"></span>
-                            <span id="' . $short . 'Percent"></span>
                         </td>
                     </tr>
                 </table>
