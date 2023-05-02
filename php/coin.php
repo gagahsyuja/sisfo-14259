@@ -259,7 +259,8 @@ if (isset($_GET['coin']))
                     <tr>
                         <td class="details-link-title"><h3>Price</h3></td>
                         <td class="details-link">
-                            Rp<span id="' . $short . '" style="color: #3c3836"></span>
+                            Rp<span id="' . $short . 'Price" style="color: #3c3836"></span>
+                            <span id="' . $short . 'Percent"></span>
                         </td>
                     </tr>
                 </table>
@@ -291,20 +292,39 @@ if (isset($_GET['coin']))
         </script>
         <script>
 
-            var ' . $short . ' = document.getElementById("' . $short . '");
+            var ' . $short . 'Percent = document.getElementById("' . $short . 'Percent");
+            var ' . $short . 'Price = document.getElementById("' . $short . 'Price");
 
-            var ' . $short . 'Price = {
+            var liveprice = {
                 "async": true,
                 "scroosDomain": true,
-                "url": "' . $price . '",
+                "url": "https://indodax.com/api/summaries/",
                 "method": "GET",
                 "headers": {}
             }
             
-            $.ajax(' . $short . 'Price).done(function (response) {
-                console.log(response);
+            $.ajax(liveprice).done(function (response) {
             
-                ' . $short . '.innerHTML = response.ticker.buy;
+                var last = response.tickers.' . $short . '_idr.last;
+                var yest = response.prices_24h.' . $short . 'idr;
+                var percent = last * 100 / yest;
+
+                ' . $short . 'Price.innerHTML = last;
+            
+                if (percent > 100)
+                {
+                    percent -= 100;
+                    
+                    ' . $short . 'Percent.innerHTML = "<span style=\'color: #b8bb26; text-shadow: 2px 2px 5px #282828;\'><i class=\'fa-solid fa-caret-up\'></i> " + percent.toFixed(2) + "%</span>";
+                }
+            
+                else
+                {
+                    percent = 100 - percent;
+
+                    ' . $short . 'Percent.innerHTML = "<span style=\'color: #9d0006; text-shadow: 2px 2px 5px #3c3836;\'><i class=\'fa-solid fa-caret-down\'></i> " + percent.toFixed(2) + "%</span>";
+                }
+            
             })
 
         </script>
