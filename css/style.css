@@ -1001,3 +1001,7 @@ button[type=submit]:not(:hover), button[type=button]:not(:hover) {
 {
     transition: 0.3s;
 }
+
+.watch-button:link, .watch-button:active, .watch-button:visited {
+    color: #3c3836;
+}

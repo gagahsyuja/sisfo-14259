@@ -167,7 +167,15 @@ foreach ($getAlgo as $algo)
             {
                 echo
                 '
-                        <td><button type="button" id="' . $short . 'Button"><span id="' . $short . '"></span></button></td>
+                        <td><button style="cursor: pointer;" type="button" id="' . $short . 'Button"><span id="' . $short . '"></span></button></td>
+                ';
+            }
+
+            else
+            {
+                echo
+                '
+                        <td><a class="watch-button" href="./login.php"><button type="button" style="cursor: pointer;"><i class="fa-regular fa-eye fa-2x"></i></button></a></td>
                 ';
             }
 
