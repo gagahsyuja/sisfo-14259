@@ -17,7 +17,6 @@ if (isset($_POST['submit']))
 
         if (password_verify($passwd, $passwd_hashed))
         {
-            session_start();
             $_SESSION['uname'] = $uname;
             header('Location: ./index.php');
         }

@@ -1,9 +1,11 @@
 <?php
 
-session_start();
 include_once './conn.php';
 
-$dbname = $_SESSION['uname'];
+if (isset($_SESSION['uname']))
+{
+    $dbname = $_SESSION['uname'];
+}
 
 // function getAlgo()
 
@@ -161,10 +163,15 @@ foreach ($getAlgo as $algo)
         {
             $short = $coin[$l]['coin_short_name'];
 
-            echo
-            '
-                    <td><button type="button" id="' . $short . 'Button"><span id="' . $short . '"></span></button></td>
-            ';
+            if (isset($_SESSION['uname']))
+            {
+                echo
+                '
+                        <td><button type="button" id="' . $short . 'Button"><span id="' . $short . '"></span></button></td>
+                ';
+            }
+
+            
         }
 
         echo

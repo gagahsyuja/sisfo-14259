@@ -2,7 +2,6 @@
 
 if (isset($_POST['logout']))
 {
-    session_start();
     session_destroy();
 
     echo '<style>.recommend{display: block;} .recommend-outside{display: block;}</style>';

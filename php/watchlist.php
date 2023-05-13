@@ -2,7 +2,6 @@
 
 function isEmpty()
 {
-    session_start();
     include './conn.php';
 
     $dbname = $_SESSION['uname'];
@@ -59,7 +58,6 @@ function getShort($fav)
 
 function getRemove()
 {
-    session_start();
     include './conn.php';
 
     $dbname = $_SESSION['uname'];
@@ -86,8 +84,6 @@ function getRemove()
 
 function getWatchlist()
 {
-    session_start();
-
     include './conn.php';
 
     $dbname = $_SESSION['uname'];
@@ -132,8 +128,6 @@ function getWatchlist()
 
 function getScript()
 {
-    session_start();
-
     include './conn.php';
 
     $dbname = $_SESSION['uname'];
@@ -203,8 +197,6 @@ function getScript()
 
     echo '</script';
 }
-
-session_start();
 
 if (isset($_SESSION['uname']))
 {

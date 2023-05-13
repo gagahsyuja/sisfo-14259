@@ -1,14 +1,14 @@
 <?php
 
-session_start();
-
 include './conn.php';
 
-$name = $_SESSION['uname'];
+if (isset($_SESSION['uname']))
+{
+    $name = $_SESSION['uname'];
+}
 
 function getPasswd()
 {
-    session_start();
     include './conn.php';
 
     $name = $_SESSION['uname'];
@@ -48,6 +48,7 @@ if (isset($_POST['change']))
     else
     {
         $sql = "UPDATE `account` SET `passwd` = '$passwd_hashed' WHERE `uname` = '$name'";
+
         if (mysqli_query($conn, $sql))
         {
             session_destroy();
