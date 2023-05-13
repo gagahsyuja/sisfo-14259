@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 $isLogged = FALSE;
 
 if (isset($_SESSION['uname']))
@@ -32,8 +30,8 @@ function user($isLogged)
     }
 }
 
-echo '
-
+echo 
+'
 <header>
     <ul class="topbar-title">
         <li>
@@ -50,6 +48,7 @@ echo '
     <ul class="topbar-account">
         <li>' . user($isLogged) . '</li>
     </ul>
-</header>';
+</header>
+';
 
 ?>

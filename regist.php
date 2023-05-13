@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,16 +13,6 @@
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
     </head>
     <body>
-        <!-- <div class="topbar">
-            <div class="topbar-title">
-                <h1 class="topbar-title"><a href="./index.php">Cryptopow</a></h1>
-            </div>
-            <div class="topbar-menu">
-                <a href="./index.php">Home</a>
-                <a href="./help.php">Help</a>
-                <a href="./about.html#top">About</a>
-            </div>
-        </div> -->
         <?php include './php/topbar.php'; ?>
         <br><br><br>
         <div class="login-box">

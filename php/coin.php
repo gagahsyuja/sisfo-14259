@@ -129,7 +129,6 @@ function getPrice($name)
 function isWatch($name)
 {
     include '../conn.php';
-    session_start();
 
     $dbname = $_SESSION['uname'];
 
@@ -156,6 +155,8 @@ if (isset($_GET['coin']))
     $algo = getAlgo($short);
     $algoAbout = getAlgoAbout($algo);
 
+    session_start();
+
     echo 
     '
     <!DOCTYPE html>
@@ -170,16 +171,21 @@ if (isset($_GET['coin']))
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
             <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
         </head>
-        <body>
-        ';
+    ';
+    
+    include "../php/topbarcoin.php";
 
-        include "../php/topbarcoin.php";
-        
-        echo
-        '
+    echo
+    '
+        <body>
             <div class="recommend-outside" id="popup">
                 <div class="recommend" id="popup-1">
-                    <?php include "../php/logout.php"; ?>
+    ';
+
+    include "../php/logout.php";
+    
+    echo
+    '
                 </div>
             </div>
             <br><br>
@@ -187,9 +193,30 @@ if (isset($_GET['coin']))
                 <br><br>
                 <h3 class="title">' . $name . '<br>(' . strtoupper($short) . ')</h3>
                 <h3 class="title-button">
-                    <form id="submitForm">
-                        <button type="button" id="submitButton"><span id="' . $short . '"></span></button>
-                    </form>
+    ';
+
+    if (isset($_SESSION['uname']))
+    {
+        echo
+        '
+                <form id="submitForm">
+                    <button type="button" id="submitButton"><span id="' . $short . '"></span></button>
+                </form>
+        ';
+    }
+
+    else
+    {
+        echo
+        '
+                <form id="submitForm">
+                    <a class="watch-button" href="../login.php"><button type="button" style="cursor: pointer;"><i class="fa-regular fa-eye fa-2x"></i></button></a>
+                </form>
+        ';
+    }
+    
+    echo
+    '
                 </h3>
                 <img class="image" src="' . $logo . '" alt="image of ' . $name . '" width="18%">
                 <br>
@@ -268,6 +295,7 @@ if (isset($_GET['coin']))
             {
                 popup.style.display = "none";
                 popup1.style.display = "none";
+                window.location = "./coin.php?coin=' . $short . '";
             }
 
         </script>

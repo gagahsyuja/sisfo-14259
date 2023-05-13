@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,7 +27,6 @@
         <div class="about">
             <br><br>
             <h1><strong>Hi there, <?php if (isset($_SESSION['uname'])){echo $_SESSION['uname'];} ?></strong></h1>
-            
             <div class="recommend-outside" id="popup">
                 <div class="recommend" id="popup-1">
                     <?php include './php/logout.php'; ?>
