@@ -18,7 +18,6 @@ if (isset($_POST['submitIndex']))
         $delete = "DELETE FROM `watchlist` WHERE `uname` = '$dbname' AND `coin_short_name` = '$short'";
         
         mysqli_query($conn, $delete);
-        // header("Location: ../index.php");
 
         echo '<script>window.location = "../index.php"</script>';
     }
@@ -28,7 +27,6 @@ if (isset($_POST['submitIndex']))
         $add = "INSERT INTO `watchlist` (`uname`, `coin_short_name`) VALUES ('$dbname', '$short')";
         
         mysqli_query($conn, $add);
-        // header("Location: ../index.php");
 
         echo '<script>window.location = "../index.php"</script>';
     }
@@ -46,7 +44,6 @@ if (isset($_POST['submitCoin']))
         $delete = "DELETE FROM `watchlist` WHERE `uname` = '$dbname' AND `coin_short_name` = '$short'";
         
         mysqli_query($conn, $delete);
-        // header("Location: ../index.php");
 
         echo '<script>window.location = "./coin.php?coin=' . $short . '"</script>';
     }
@@ -56,7 +53,6 @@ if (isset($_POST['submitCoin']))
         $add = "INSERT INTO `watchlist` (`uname`, `coin_short_name`) VALUES ('$dbname', '$short')";
         
         mysqli_query($conn, $add);
-        // header("Location: ../index.php");
 
         echo '<script>window.location = "./coin.php?coin=' . $short . '"</script>';
     }

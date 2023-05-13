@@ -11,12 +11,12 @@ if (isset($_POST['logout']))
 
 if (isset($_POST['user']))
 {
-    header("Location: ./account.php");
+    echo '<script>window.location="./account.php"</script>';
 }
 
 if (isset($_POST['coin']))
 {
-    header("Location: ../account.php");
+    echo '<script>window.location="../account.php"</script>';
 }
 
 ?>

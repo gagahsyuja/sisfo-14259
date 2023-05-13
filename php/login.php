@@ -18,7 +18,7 @@ if (isset($_POST['submit']))
         if (password_verify($passwd, $passwd_hashed))
         {
             $_SESSION['uname'] = $uname;
-            header('Location: ./index.php');
+            echo '<script>window.location="./index.php"</script>';
         }
 
         else
