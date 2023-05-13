@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="about">
-            <br><br>
+            <br>
             <h1><strong>About Me</strong></h1>
             <!-- <p>I use linux btw</p> -->
             <br><br>
@@ -42,6 +42,7 @@
                 <a href="https://instagram.com/gagahsyuja__" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
                 <a href="https://www.facebook.com/gagah.s.abdullah" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
             </div>
+            <br><br><br>
         </div>
         <br><br><br><br>
         <div class="botbar">
