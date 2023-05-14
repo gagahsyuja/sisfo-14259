@@ -948,11 +948,14 @@ button[type=submit]:not(:hover), button[type=button]:not(:hover) {
 .watchlist-button button {
     color: #fabd2f;
     background-color: #3c3836;
+    border-radius: 0px;
+    width: auto;
     border: none;
 }
 
 .watchlist-button button:hover {
     color: #cc241d;
+    background-color: transparent;
     transition: 0.3s;
 }
 

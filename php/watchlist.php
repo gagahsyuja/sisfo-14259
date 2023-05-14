@@ -56,32 +56,6 @@ function getShort($fav)
     return $short;
 }
 
-function getRemove()
-{
-    include './conn.php';
-
-    $dbname = $_SESSION['uname'];
-
-    $sql = "SELECT * FROM `watchlist` WHERE `uname` = '$dbname'";
-    $result = mysqli_query($conn, $sql);
-
-    while ($row = mysqli_fetch_assoc($result))
-    {
-        $short = $row['coin_short_name'];
-        $remove = 'remove' . ucfirst($short);
-
-        if (isset($_POST[$remove]))
-        {
-            $sql = "DELETE FROM `watchlist` WHERE `uname` = '$dbname' AND `coin_short_name` = '$short'";
-
-            if (mysqli_query($conn, $sql))
-            {
-                header("Location: ./watchlist.php");
-            }
-        }
-    }
-}
-
 function getWatchlist()
 {
     include './conn.php';
@@ -99,28 +73,30 @@ function getWatchlist()
 
         echo 
         '
-        <div class="watchlist-outside">
-            <table>
-                <tr>
-                    <td class="watchlist-outside-image">
-                        <img class="watchlist-image" src="' . $logo . '" width="50%" alt="">
-                    </td>
-                    <td>
-                        <a href="./php/coin.php?coin=' . $short . '" target="_blank"><h2>' . $name . '</h2></a>
-                    </td>
-                    <td>
-                        <h3>Rp<span id="' . $short . 'Price"></span><br><span id="' . $short . 'Percent"></span></h3>
-                    <td>
-                        <div class="watchlist-button">
-                            <form action="./php/remove.php" method="post">
-                                <button name="remove' . ucfirst($short) . '"><i class="fa-solid fa-trash fa-2x"></i></button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-            </table>
+        <div id="' . $short . '">
+            <div class="watchlist-outside">
+                <table>
+                    <tr>
+                        <td class="watchlist-outside-image">
+                            <img class="watchlist-image" src="' . $logo . '" width="50%" alt="">
+                        </td>
+                        <td>
+                            <a href="./php/coin.php?coin=' . $short . '" target="_blank"><h2>' . $name . '</h2></a>
+                        </td>
+                        <td>
+                            <h3>Rp<span id="' . $short . 'Price"></span><br><span id="' . $short . 'Percent"></span></h3>
+                        <td>
+                            <div class="watchlist-button">
+                                <form id="form-remove">
+                                    <button type="button" class="remove" coin="' . $short . '"><i class="fa-solid fa-trash fa-2x"></i></button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br><br>
         </div>
-        <br><br>
         
         ';
     }
@@ -195,7 +171,31 @@ function getScript()
         ';
     }
 
-    echo '</script';
+    echo '</script>';
+}
+
+function getAjax()
+{
+    echo
+    '
+    <script>
+
+    $(document).ready(function() {
+            $(".remove").click(function() {
+                var coin = $(this).attr("coin")
+                $.ajax({
+                    type: "post",
+                    url: "./php/remove.php",
+                    data: $(".form-remove").serialize() + "&coin=" + coin + "",
+                    success: function() {
+                        $("#" + coin + "").remove()
+                    }
+                })
+            })
+        })
+
+    </script>
+    ';
 }
 
 if (isset($_SESSION['uname']))
@@ -209,7 +209,7 @@ if (isset($_SESSION['uname']))
         ';
         getWatchlist();
         getScript();
-        // getRemove();
+        getAjax();
     }
     
     else
