@@ -1008,3 +1008,32 @@ button[type=submit]:not(:hover), button[type=button]:not(:hover) {
 .watch-button:link, .watch-button:active, .watch-button:visited {
     color: #3c3836;
 }
+
+.loader {
+    z-index: 69;
+    background-color: rgba(28, 28, 28, 0.8);
+    backdrop-filter: blur(18px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.loader img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 10%;
+    animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

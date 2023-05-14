@@ -31,7 +31,10 @@ function user($isLogged)
 }
 
 echo '
-
+<script src="../js/required.js"></script>
+<div class="loader">
+    <img src="../img/logo.png">
+</div>
 <header>
     <ul class="topbar-title">
         <li>
