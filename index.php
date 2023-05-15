@@ -19,6 +19,14 @@
             </div>
         </div>
         <img src="./img/banner.png" alt="banner" width="100%">
+        <div id="buy"></div>
+        <div id="buy-popup">
+            <div class="buy-popup">
+                <i class="fa-solid fa-circle-check fa-5x"></i>
+                <br><br><br>
+                <button id="buy-popup-close"><h2>Done</h2></button>
+            </div>
+        </div>
         <?php include './php/index.php'; ?>
     <br><br><br><br>
     <div class="botbar">

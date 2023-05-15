@@ -17,7 +17,7 @@ while ($row = mysqli_fetch_assoc($result))
     $getAlgo[] = $row;
 }
 
-// Navbar //
+// Navbar
 
 echo
 '
@@ -167,7 +167,11 @@ foreach ($getAlgo as $algo)
             {
                 echo
                 '
-                        <td><button style="cursor: pointer;" type="button" id="' . $short . 'Button"><span id="' . $short . '"></span></button></td>
+                        <td>
+                            <button type="button" class="buy-button" coin="' . $short . '">Buy</button>
+
+                            <button style="cursor: pointer;" type="button" id="' . $short . 'Button"><span id="' . $short . '"></span></button>
+                        </td>
                 ';
             }
 
@@ -175,7 +179,11 @@ foreach ($getAlgo as $algo)
             {
                 echo
                 '
-                        <td><a class="watch-button" href="./login.php"><button type="button" style="cursor: pointer;"><i class="fa-regular fa-eye fa-2x"></i></button></a></td>
+                        <td>
+                            <a class="watch-button" href="./login.php"><button type="button" style="cursor: pointer;">Buy</button></a>
+
+                            <a class="watch-button" href="./login.php"><button type="button" style="cursor: pointer;"><i class="fa-regular fa-eye fa-2x"></i></button></a>
+                        </td>
                 ';
             }
 
@@ -254,5 +262,23 @@ echo
     </script>
 ';
 
+echo
+'
+    <script>
+
+        $(document).ready(function() {
+            $(".buy-button").click(function() {
+                var coin = $(this).attr("coin")
+
+                $("#buy").fadeIn()
+
+                $("#buy").load("./php/buy.php", {
+                    "coin": coin
+                })
+            })
+        })
+
+    </script>
+';
 
 ?>
