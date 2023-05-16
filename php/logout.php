@@ -24,4 +24,9 @@ if (isset($_POST['wallet']))
     echo '<script>window.location="./wallet.php"</script>';
 }
 
+if (isset($_POST['wallet-coin']))
+{
+    echo '<script>window.location="../wallet.php"</script>';
+}
+
 ?>

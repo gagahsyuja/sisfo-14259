@@ -1,6 +1,7 @@
 <?php
 
 $isLogged = FALSE;
+$balance = 0;
 
 if (isset($_SESSION['uname']))
 {

@@ -1,13 +1,30 @@
 <?php
 
 $isLogged = FALSE;
+$balance = 0;
 
 if (isset($_SESSION['uname']))
 {
     $isLogged = TRUE;
+    $uname = $_SESSION['uname'];
+
+    include_once '../conn.php';
+    
+    $balance = 0;
+    
+    $sql = "SELECT `wallet_balance` FROM `wallet` WHERE `wallet_uname` = '$uname'";
+    $result = mysqli_query($conn, $sql);
+    
+    if (mysqli_num_rows($result) > 0)
+    {
+        while ($row = mysqli_fetch_assoc($result))
+        {
+            $balance += $row['wallet_balance'];
+        }
+    }
 }
 
-function user($isLogged)
+function user($isLogged, $balance)
 {
     if ($isLogged == FALSE)
     {
@@ -21,6 +38,7 @@ function user($isLogged)
         $logged =
         '
         <form action="" method="post">
+            <a href="#"><button name="wallet-coin"><p>Rp' . $balance . '</p></button></a>
             <a href="#"><button name="coin"><i class="fa-solid fa-user-large"></i> ' . $_SESSION["uname"] . '</button></a>
             <a id="topbar-logout" href="#"><button name="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
         </form>
@@ -49,7 +67,7 @@ echo '
         </ul>
     </nav>
     <ul class="topbar-account">
-        <li>' . user($isLogged) . '</li>
+        <li>' . user($isLogged, $balance) . '</li>
     </ul>
 </header>';
 
