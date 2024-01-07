@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 * {
     padding: 0;
@@ -12,6 +13,7 @@ a {
 
 body {
     font-family: Roboto Mono;
+    /* font-family: Poppins; */
     background-color: #3c3836;
 }
 
@@ -375,8 +377,59 @@ table h3 {
 
 .title {
     text-align: center;
-    font-size: x-large;
+    /* font-size: x-large; */
+    background-color: #d79921;
+    color: #3c3836;
+    padding: 1% 0;
+}
+
+.md {
     color: #d79921;
+    font-size: 18px;
+    padding: 0px 50px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.md p {
+    text-align: justify;
+    padding: 10px 0px;
+    /* padding: 10px 10px; */
+}
+
+.md h2 {
+    /* padding: 0px 10px; */
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.md h3 {
+    /* padding: 0px 10px; */
+    padding-top: 10px;
+    text-align: justify;
+}
+
+.md h4 {
+    /* padding: 0px 10px; */
+    padding-top: 20px;
+}
+
+.md li {
+    padding-bottom: 10px;
+    list-style-position: outside;
+    padding-left: 10px;
+    margin-left: 20px;
+}
+
+.md ul {
+    list-style-type:disc;
+    /* padding: 10px 10px; */
+    margin: 10px 20px;
+}
+
+.md ol {
+    /* padding: 10px 10px; */
+    margin: 10px 30px;
 }
 
 .title-button
@@ -480,10 +533,11 @@ table h3 {
 }
 
 .botbar h1 {
-    padding-top: 7.5%;
+    /* padding-top: 7.5%; */
     padding-left: 5%;
     color: #fabd2f;
     float: left;
+    margin-top: 140px;
     margin-left: 5px;
 }
 
@@ -503,7 +557,7 @@ table h3 {
 .botbar-social {
     float: right;
     margin-right: 120px;
-    margin-top: -155px;
+    margin-top: 140px;
     font-size: 30pt;
 }
 
@@ -619,10 +673,11 @@ table h3 {
     background-color: #3c3836;
     box-shadow: 0px 0px 50px #282828;
     margin-top: 2%;
-    margin-right: 6.5%;
-    margin-left: 6.5%;
+    margin-right: 20%;
+    margin-left: 20%;
     border-radius: 15px;
-    padding-bottom: 3%;
+    /* padding-bottom: 3%; */
+    border: 2px solid #d79921;
 }
 
 .vram {
@@ -919,18 +974,36 @@ button[type=submit]:not(:hover), button[type=button]:not(:hover) {
 .watchlist-outside {
     border: 5px solid #fabd2f;
     border-radius: 30px;
+    margin-top: 50px;
     padding-top: 2%;
     margin-left: 20%;
     margin-right: 20%;
     padding-bottom: 2%;
     box-shadow: 0px 0px 30px #d79921;
+    position: relative;
     /* background-color: rgba(181, 118, 20, 0.1); */
     /* background-color: #3c3836; */
 }
 
+.watchlist-outside:hover {
+    background-color: #fabd2f;
+    transition: ease-in 0.2s;
+}
+
+.watchlist-outside:not(:hover) {
+    transition: ease-out 0.2s;
+}
+
+.watchlist-outside-link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
 .watchlist-outside h2 {
     text-align: center;
-    padding-left: 20%;
     color: #fabd2f;
 }
 
@@ -1011,7 +1084,6 @@ button[type=submit]:not(:hover), button[type=button]:not(:hover) {
 
 .loader {
     z-index: 69;
-    background-color: ;
     background-color: rgba(29, 32, 33, 0.8);
     backdrop-filter: blur(18px);
     position: fixed;

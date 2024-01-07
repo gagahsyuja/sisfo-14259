@@ -2,8 +2,8 @@
 
 $server = "localhost";
 $user = "root";
-$pass = "";
-$database = "cryptopow";
+$pass = "root";
+$database = "sisfo";
 
 $conn = mysqli_connect($server, $user, $pass, $database);
 

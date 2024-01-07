@@ -13,27 +13,15 @@
     </head>
     <body>
         <?php include './php/topbar.php'; ?>
-        <div class="recommend-outside" id="popup">
-            <div class="recommend" id="popup-1">
-                <?php include './php/logout.php'; ?>
-            </div>
-        </div>
-        <img src="./img/banner.png" alt="banner" width="100%">
-        <div id="buy"></div>
-        <div id="buy-popup">
-            <div class="buy-popup">
-                <i class="fa-solid fa-circle-check fa-5x"></i>
-                <br><br><br>
-                <button id="buy-popup-close"><h2>Done</h2></button>
-            </div>
-        </div>
+        <br>
+        <!-- <img src="./img/banner.png" alt="banner" width="100%"> -->
         <?php include './php/index.php'; ?>
     <br><br><br><br>
     <div class="botbar">
-        <h1><span>&#169;2022</span>Cryptopow</h1>
-        <div class="botbar-img">
+        <h1><span>&#169;2024</span><i>SISFO<span style="font-size: 20px; padding-left: 2px">14259</span></i></h1>
+        <!-- <div class="botbar-img">
             <img src="./img/logo.png" alt="logo" width="15%">
-        </div>
+        </div> -->
         <div class="botbar-social">
             <a href="https://github.com/gagahsyuja" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://instagram.com/gagahsyuja__" target="_blank"><i class="fa-brands fa-instagram"></i></a>
